@@ -5,6 +5,8 @@
 
 > Nest an array of recipes into a tree
 
+**:bomb: NOTE: This module is still heavily in development and the API might change completely. Please don't use it yet.**
+
 ## Install
 
 ```
