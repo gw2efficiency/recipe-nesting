@@ -104,6 +104,23 @@ describe('recipe-nesting', () => {
       ],
       id: 69,
       chat_link: '[&CUUAAAA=]'
+    },
+    {
+      type: 'Fake',
+      output_item_id: 1234,
+      output_item_count: 1,
+      min_rating: 175,
+      time_to_craft_ms: 1000,
+      disciplines: ['Leatherworker', 'Armorsmith', 'Tailor'],
+      flags: ['AutoLearned'],
+      ingredients: [
+        {item_id: 1337, count: 1}
+      ],
+      guild_ingredients: [
+        {upgrade_id: 1711, count: 7}
+      ],
+      id: 69,
+      chat_link: '[&CUUAAAA=]'
     }
   ]
 
@@ -213,5 +230,26 @@ describe('recipe-nesting', () => {
     }
 
     expect(output.find(x => x.id === 19814)).to.deep.equal(expected)
+  })
+
+  it('can include guild item ingredients', () => {
+    let expected = {
+      id: 1234,
+      quantity: 1,
+      output: 1,
+      components: [
+        {
+          id: 1337,
+          quantity: 1
+        },
+        {
+          id: 42,
+          quantity: 7
+        }
+      ]
+    }
+    let guildItemMap = {1711: 42}
+
+    expect(module(input, guildItemMap).find(x => x.id === 1234)).to.deep.equal(expected)
   })
 })

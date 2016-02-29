@@ -48,6 +48,11 @@ let recipes = [
   // ...
 ]
 
+// You can also pass in a map of guild upgrade ids into item ids that
+// get referenced by scribe recipes (upgrade -> item)
+// Please note that these only get included but not nested (yet?) because of some API / game implementation consistencies
+let guildItemMap = {618: 75627}
+
 let nestedRecipes = nesting(recipes)
 // The output is an array consisting of the following:
 nestedRecipes = [

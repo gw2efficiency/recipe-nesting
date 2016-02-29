@@ -1,14 +1,22 @@
-function nest (recipes) {
-  recipes = recipes.map(transformRecipe)
+function nest (recipes, guildItemsMap) {
+  recipes = recipes.map(r => transformRecipe(r, guildItemsMap))
   recipes = recipes.map(r => nestRecipe(r, recipes))
   return recipes
 }
 
-function transformRecipe (recipe) {
+function transformRecipe (recipe, guildItemsMap) {
+  let components = recipe.ingredients.map(i => ({id: i.item_id, quantity: i.count}))
+
+  if (guildItemsMap && recipe.guild_ingredients) {
+    let guildIngredients = recipe.guild_ingredients.filter(i => guildItemsMap[i.upgrade_id])
+    guildIngredients = guildIngredients.map(i => ({id: guildItemsMap[i.upgrade_id], quantity: i.count}))
+    components = components.concat(guildIngredients)
+  }
+
   return {
     id: recipe.output_item_id,
     output: recipe.output_item_count,
-    components: recipe.ingredients.map(i => ({id: i.item_id, quantity: i.count}))
+    components: components
   }
 }
 
