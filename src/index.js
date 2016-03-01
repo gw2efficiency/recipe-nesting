@@ -41,12 +41,12 @@ function nestRecipe (recipe, recipes, quantity = 1) {
 
     // Try and find the component in the recipes. If we cant find it,
     // either give back the raw component or discard if it's a guild upgrade
-    let ingredientRecipe = (!component.guild)
+    let ingredientRecipe = !component.guild
       ? recipes.find(x => x.id === component.id)
       : recipes.find(x => x.upgrade_id === component.id)
 
     if (!ingredientRecipe) {
-      return (!component.guild) ? component : false
+      return !component.guild ? component : false
     }
 
     // Found a recipe for the component, let's nest!
