@@ -135,6 +135,22 @@ describe('recipe-nesting', () => {
       output_upgrade_id: 696,
       id: 11756,
       chat_link: '[&CewtAAA=]'
+    },
+    {
+      type: 'Fake too',
+      output_item_id: 4567,
+      output_item_count: 1,
+      min_rating: 175,
+      time_to_craft_ms: 1000,
+      disciplines: ['Leatherworker', 'Armorsmith', 'Tailor'],
+      flags: ['AutoLearned'],
+      ingredients: [],
+      guild_ingredients: [
+        {upgrade_id: 9999998, count: 7},
+        {upgrade_id: 9999999, count: 7}
+      ],
+      id: 69,
+      chat_link: '[&CUUAAAA=]'
     }
   ]
 
@@ -282,5 +298,15 @@ describe('recipe-nesting', () => {
     }
 
     expect(module(input).find(x => x.id === 1234)).to.deep.equal(expected)
+  })
+
+  it('filters components', () => {
+    let expected = {
+      id: 4567,
+      quantity: 1,
+      output: 1
+    }
+
+    expect(module(input).find(x => x.id === 4567)).to.deep.equal(expected)
   })
 })

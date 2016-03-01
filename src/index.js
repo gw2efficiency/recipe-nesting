@@ -62,6 +62,11 @@ function nestRecipe (recipe, recipes, quantity = 1) {
   // Sort components so that non-craftable components are always on top
   recipe.components.sort((a, b) => (a.components ? 1 : 0) - (b.components ? 1 : 0))
 
+  // Throw out the components if they are empty (= only non-matched guild recipes)
+  if (recipe.components.length === 0) {
+    delete recipe.components
+  }
+
   return recipe
 }
 
