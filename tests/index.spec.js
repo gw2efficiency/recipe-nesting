@@ -117,10 +117,24 @@ describe('recipe-nesting', () => {
         {item_id: 1337, count: 1}
       ],
       guild_ingredients: [
-        {upgrade_id: 1711, count: 7}
+        {upgrade_id: 696, count: 7},
+        {upgrade_id: 1234567, count: 7}
       ],
       id: 69,
       chat_link: '[&CUUAAAA=]'
+    },
+    {
+      type: 'GuildDecoration',
+      output_item_id: 77749,
+      output_item_count: 1,
+      min_rating: 250,
+      time_to_craft_ms: 1000,
+      disciplines: ['Scribe'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 19679, count: 3}],
+      output_upgrade_id: 696,
+      id: 11756,
+      chat_link: '[&CewtAAA=]'
     }
   ]
 
@@ -187,7 +201,6 @@ describe('recipe-nesting', () => {
         }
       ]
     }
-
     let expectedRoot = {
       id: 19679,
       quantity: 5,
@@ -243,13 +256,31 @@ describe('recipe-nesting', () => {
           quantity: 1
         },
         {
-          id: 42,
-          quantity: 7
+          id: 77749,
+          output: 1,
+          quantity: 7,
+          upgrade_id: 696,
+          components: [
+            {
+              id: 19679,
+              output: 5,
+              quantity: 21,
+              components: [
+                {
+                  id: 19697,
+                  quantity: 210
+                },
+                {
+                  id: 19704,
+                  quantity: 21
+                }
+              ]
+            }
+          ]
         }
       ]
     }
-    let guildItemMap = {1711: 42}
 
-    expect(module(input, guildItemMap).find(x => x.id === 1234)).to.deep.equal(expected)
+    expect(module(input).find(x => x.id === 1234)).to.deep.equal(expected)
   })
 })

@@ -27,8 +27,9 @@ const nesting = require('recipe-nesting')
 // Expects a list of recipes in the API format
 // -> https://github.com/arenanet/api-cdi/blob/master/v2/recipes.js
 // This needs to include at least the recipe you want to transform
-// and ALL subrecipes (since we want to build a full tree).
-// It is easiest to just pass in all existing recipes.
+// and all sub-recipes including guild upgrade recipes
+// (since we want to build a full tree).
+// It is easiest to just pass in all existing recipes. ;)
 let recipes = [
   {
     "type": "Refinement",
@@ -47,11 +48,6 @@ let recipes = [
   },
   // ...
 ]
-
-// You can also pass in a map of guild upgrade ids into item ids that
-// get referenced by scribe recipes (upgrade -> item)
-// Please note that these only get included but not nested (yet?) because of some API / game implementation consistencies
-let guildItemMap = {618: 75627}
 
 let nestedRecipes = nesting(recipes)
 // The output is an array consisting of the following:
