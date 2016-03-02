@@ -19,7 +19,9 @@ function transformRecipe (recipe) {
   let transformed = {
     id: recipe.output_item_id,
     output: recipe.output_item_count,
-    components: components
+    components: components,
+    min_rating: recipe.min_rating !== undefined ? recipe.min_rating : null,
+    disciplines: recipe.disciplines || []
   }
 
   if (recipe.output_upgrade_id) {

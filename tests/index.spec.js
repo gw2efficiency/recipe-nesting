@@ -140,9 +140,7 @@ describe('recipe-nesting', () => {
       type: 'Fake too',
       output_item_id: 4567,
       output_item_count: 1,
-      min_rating: 175,
       time_to_craft_ms: 1000,
-      disciplines: ['Leatherworker', 'Armorsmith', 'Tailor'],
       flags: ['AutoLearned'],
       ingredients: [],
       guild_ingredients: [
@@ -161,6 +159,8 @@ describe('recipe-nesting', () => {
       id: 19712,
       quantity: 1,
       output: 1,
+      min_rating: 400,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       components: [
         {id: 19725, quantity: 3}
       ]
@@ -174,11 +174,15 @@ describe('recipe-nesting', () => {
       id: 12988,
       quantity: 1,
       output: 1,
+      min_rating: 400,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       components: [
         {
           id: 19712,
           quantity: 2,
           output: 1,
+          min_rating: 400,
+          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
           components: [
             {id: 19725, quantity: 6}
           ]
@@ -187,6 +191,8 @@ describe('recipe-nesting', () => {
           id: 19685,
           quantity: 3,
           output: 1,
+          min_rating: 400,
+          disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman', 'Jeweler'],
           components: [
             {id: 19701, quantity: 6}
           ]
@@ -202,18 +208,27 @@ describe('recipe-nesting', () => {
       id: 12990,
       quantity: 1,
       output: 1,
+      min_rating: 50,
+      disciplines: ['Artificer', 'Weaponsmith', 'Huntsman'],
       components: [
         {
           id: 19710,
           quantity: 2,
           output: 1,
+          min_rating: 0,
+          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
           components: [{id: 19723, quantity: 6}]
         },
         {
           id: 19679,
           quantity: 3,
           output: 5,
-          components: [{id: 19697, quantity: 30}, {id: 19704, quantity: 3}]
+          min_rating: 0,
+          disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+          components: [
+            {id: 19697, quantity: 30},
+            {id: 19704, quantity: 3}
+          ]
         }
       ]
     }
@@ -221,6 +236,8 @@ describe('recipe-nesting', () => {
       id: 19679,
       quantity: 5,
       output: 5,
+      min_rating: 0,
+      disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       components: [
         {id: 19697, quantity: 10},
         {id: 19704, quantity: 1}
@@ -236,6 +253,8 @@ describe('recipe-nesting', () => {
       id: 19814,
       quantity: 1,
       output: 1,
+      min_rating: 175,
+      disciplines: ['Leatherworker', 'Armorsmith', 'Tailor'],
       components: [
         {
           id: 24284,
@@ -253,6 +272,8 @@ describe('recipe-nesting', () => {
           id: 19742,
           quantity: 1,
           output: 1,
+          min_rating: 150,
+          disciplines: ['Leatherworker', 'Armorsmith', 'Tailor', 'Scribe'],
           components: [{id: 19741, quantity: 2}]
         }
       ]
@@ -266,6 +287,8 @@ describe('recipe-nesting', () => {
       id: 1234,
       quantity: 1,
       output: 1,
+      min_rating: 175,
+      disciplines: ['Leatherworker', 'Armorsmith', 'Tailor'],
       components: [
         {
           id: 1337,
@@ -276,11 +299,15 @@ describe('recipe-nesting', () => {
           output: 1,
           quantity: 7,
           upgrade_id: 696,
+          min_rating: 250,
+          disciplines: ['Scribe'],
           components: [
             {
               id: 19679,
               output: 5,
               quantity: 21,
+              min_rating: 0,
+              disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
               components: [
                 {
                   id: 19697,
@@ -304,7 +331,9 @@ describe('recipe-nesting', () => {
     let expected = {
       id: 4567,
       quantity: 1,
-      output: 1
+      output: 1,
+      min_rating: null,
+      disciplines: []
     }
 
     expect(module(input).find(x => x.id === 4567)).to.deep.equal(expected)
