@@ -5,24 +5,18 @@
 
 > Nest an array of recipes into a tree
 
-**:bomb: NOTE: This module is still heavily in development and the API might change completely. Please don't use it yet.**
-
 ## Install
 
 ```
-npm install https://github.com/gw2efficiency/recipe-nesting
+npm install gw2e-recipe-nesting
 ```
 
 This module can be used for Node.js as well as browsers using [Browserify](https://github.com/substack/browserify-handbook#how-node_modules-works).
 
-(Note: Babel gets pulled in as a dependency, because the module is written in ES7 and 
-gets compiled into ES5 during the installation. The Babel code is **not** included in the module, 
-don't be shocked at the dependency tree. :wink:)
-
 ## Usage
 
 ```js
-const nesting = require('recipe-nesting')
+const nesting = require('gw2e-recipe-nesting')
 
 // Expects a list of recipes in the API format
 // -> https://github.com/arenanet/api-cdi/blob/master/v2/recipes.js
