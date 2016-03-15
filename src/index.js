@@ -31,9 +31,10 @@ function transformRecipe (recipe) {
   return transformed
 }
 
-function nestRecipe (recipe, recipes, quantity = 1) {
+function nestRecipe (recipe, recipes, quantity = 1, nestedItems = []) {
   recipe = {...recipe}
 
+  nestedItems.push(recipe.id)
   recipe.quantity = recipe.output
   recipe.components = recipe.components.map(component => {
     component = {...component}
@@ -51,8 +52,14 @@ function nestRecipe (recipe, recipes, quantity = 1) {
       return !component.guild ? component : false
     }
 
+    // Don't nest further if we'd run into a recursion
+    if (nestedItems.indexOf(component.id) !== -1) {
+      return !component.guild ? component : {id: ingredientRecipe.id, quantity: component.quantity}
+    }
+
     // Found a recipe for the component, let's nest!
-    ingredientRecipe = nestRecipe(ingredientRecipe, recipes, component.quantity)
+    nestedItems.push(component.id)
+    ingredientRecipe = nestRecipe(ingredientRecipe, recipes, component.quantity, nestedItems)
     ingredientRecipe.output = ingredientRecipe.quantity
     ingredientRecipe.quantity = component.quantity
     return ingredientRecipe

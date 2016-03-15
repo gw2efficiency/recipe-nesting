@@ -149,6 +149,69 @@ describe('recipe-nesting', () => {
       ],
       id: 69,
       chat_link: '[&CUUAAAA=]'
+    },
+    {
+      type: 'Refinement',
+      output_item_id: 88771,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 88771, count: 3}, {item_id: 88770, count: 2}],
+      id: 2,
+      chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'Refinement',
+      output_item_id: 88772,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 88770, count: 2}, {item_id: 88773, count: 2}],
+      id: 2,
+      chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'Refinement',
+      output_item_id: 88773,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 88774, count: 2}],
+      guild_ingredients: [{upgrade_id: 9001, count: 1}],
+      id: 2,
+      chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'Refinement',
+      output_item_id: 88774,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 88772, count: 2}],
+      id: 2,
+      chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'GuildDecoration',
+      output_item_id: 88775,
+      output_item_count: 1,
+      min_rating: 250,
+      time_to_craft_ms: 1000,
+      disciplines: ['Scribe'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 88772, count: 2}],
+      guild_ingredients: [{upgrade_id: 9001, count: 1}],
+      output_upgrade_id: 9001,
+      id: 900011,
+      chat_link: '[&CewtAAA=]'
     }
   ]
 
@@ -324,7 +387,7 @@ describe('recipe-nesting', () => {
       ]
     }
 
-    expect(module(input).find(x => x.id === 1234)).to.deep.equal(expected)
+    expect(output.find(x => x.id === 1234)).to.deep.equal(expected)
   })
 
   it('filters components', () => {
@@ -337,5 +400,71 @@ describe('recipe-nesting', () => {
     }
 
     expect(module(input).find(x => x.id === 4567)).to.deep.equal(expected)
+  })
+
+  it('handles self-referencing recipes', () => {
+    let expected = {
+      id: 88771,
+      quantity: 1,
+      output: 1,
+      min_rating: 400,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      components: [
+        {
+          id: 88771,
+          quantity: 3
+        },
+        {
+          id: 88770,
+          quantity: 2
+        }
+      ]
+    }
+
+    expect(output.find(x => x.id === 88771)).to.deep.equal(expected)
+  })
+
+  it('handles recursive recipes', () => {
+    let expected = {
+      id: 88772,
+      output: 1,
+      min_rating: 400,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      quantity: 1,
+      components: [
+        {id: 88770, quantity: 2},
+        {
+          id: 88773,
+          output: 1,
+          min_rating: 400,
+          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+          quantity: 2,
+          components: [
+            {
+              id: 88774,
+              output: 1,
+              min_rating: 400,
+              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+              quantity: 4,
+              components: [{id: 88772, quantity: 8}]
+            },
+            {
+              id: 88775,
+              components: [
+                {id: 88772, quantity: 4},
+                {id: 88775, quantity: 2}
+              ],
+              disciplines: ['Scribe'],
+              min_rating: 250,
+              output: 1,
+              quantity: 2,
+              upgrade_id: 9001
+            }
+          ]
+        }
+      ]
+    }
+
+    expect(output.find(x => x.id === 88772)).to.deep.equal(expected)
   })
 })
