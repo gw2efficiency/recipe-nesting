@@ -53,12 +53,12 @@ nestedRecipes = [
     "components": [
       {
         "id": 19712,
-        "quantity": 10,
+        "quantity": 2,
         "output": 1,
         "components": [
           {
             "id": 19725,
-            "quantity": 30
+            "quantity": 3
           },
           // ...
         ]

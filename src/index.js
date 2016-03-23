@@ -31,16 +31,13 @@ function transformRecipe (recipe) {
   return transformed
 }
 
-function nestRecipe (recipe, recipes, quantity = 1, nestedItems = []) {
+function nestRecipe (recipe, recipes, nestedItems = []) {
   recipe = {...recipe}
 
   nestedItems.push(recipe.id)
   recipe.quantity = recipe.output
   recipe.components = recipe.components.map(component => {
     component = {...component}
-
-    // Update the component quantity based on the higher tree level
-    component.quantity = quantity * component.quantity
 
     // Try and find the component in the recipes. If we cant find it,
     // either give back the raw component or discard if it's a guild upgrade
@@ -59,7 +56,7 @@ function nestRecipe (recipe, recipes, quantity = 1, nestedItems = []) {
 
     // Found a recipe for the component, let's nest!
     nestedItems.push(component.id)
-    ingredientRecipe = nestRecipe(ingredientRecipe, recipes, component.quantity, nestedItems)
+    ingredientRecipe = nestRecipe(ingredientRecipe, recipes, nestedItems)
     ingredientRecipe.output = ingredientRecipe.quantity
     ingredientRecipe.quantity = component.quantity
     return ingredientRecipe

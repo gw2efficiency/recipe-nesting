@@ -247,7 +247,7 @@ describe('recipe-nesting', () => {
           min_rating: 400,
           disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
           components: [
-            {id: 19725, quantity: 6}
+            {id: 19725, quantity: 3}
           ]
         },
         {
@@ -257,7 +257,7 @@ describe('recipe-nesting', () => {
           min_rating: 400,
           disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman', 'Jeweler'],
           components: [
-            {id: 19701, quantity: 6}
+            {id: 19701, quantity: 2}
           ]
         }
       ]
@@ -280,7 +280,7 @@ describe('recipe-nesting', () => {
           output: 1,
           min_rating: 0,
           disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          components: [{id: 19723, quantity: 6}]
+          components: [{id: 19723, quantity: 3}]
         },
         {
           id: 19679,
@@ -289,8 +289,8 @@ describe('recipe-nesting', () => {
           min_rating: 0,
           disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
           components: [
-            {id: 19697, quantity: 30},
-            {id: 19704, quantity: 3}
+            {id: 19697, quantity: 10},
+            {id: 19704, quantity: 1}
           ]
         }
       ]
@@ -368,17 +368,17 @@ describe('recipe-nesting', () => {
             {
               id: 19679,
               output: 5,
-              quantity: 21,
+              quantity: 3,
               min_rating: 0,
               disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
               components: [
                 {
                   id: 19697,
-                  quantity: 210
+                  quantity: 10
                 },
                 {
                   id: 19704,
-                  quantity: 21
+                  quantity: 1
                 }
               ]
             }
@@ -445,19 +445,19 @@ describe('recipe-nesting', () => {
               output: 1,
               min_rating: 400,
               disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-              quantity: 4,
-              components: [{id: 88772, quantity: 8}]
+              quantity: 2,
+              components: [{id: 88772, quantity: 2}]
             },
             {
               id: 88775,
               components: [
-                {id: 88772, quantity: 4},
-                {id: 88775, quantity: 2}
+                {id: 88772, quantity: 2},
+                {id: 88775, quantity: 1}
               ],
               disciplines: ['Scribe'],
               min_rating: 250,
               output: 1,
-              quantity: 2,
+              quantity: 1,
               upgrade_id: 9001
             }
           ]
