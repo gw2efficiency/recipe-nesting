@@ -35,7 +35,7 @@ function nestRecipe (recipe, recipes, nestedItems = []) {
   recipe = {...recipe}
 
   nestedItems.push(recipe.id)
-  recipe.quantity = recipe.output
+  recipe.quantity = recipe.quantity || 1
   recipe.components = recipe.components.map(component => {
     component = {...component}
 
@@ -57,7 +57,6 @@ function nestRecipe (recipe, recipes, nestedItems = []) {
     // Found a recipe for the component, let's nest!
     nestedItems.push(component.id)
     ingredientRecipe = nestRecipe(ingredientRecipe, recipes, nestedItems)
-    ingredientRecipe.output = ingredientRecipe.quantity
     ingredientRecipe.quantity = component.quantity
     return ingredientRecipe
   })

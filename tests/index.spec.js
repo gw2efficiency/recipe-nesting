@@ -18,6 +18,18 @@ describe('recipe-nesting', () => {
     },
     {
       type: 'Refinement',
+      output_item_id: 19112,
+      output_item_count: 5,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 19725, count: 3}],
+      id: 2,
+      chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'Refinement',
       output_item_id: 19685,
       output_item_count: 1,
       min_rating: 400,
@@ -232,6 +244,21 @@ describe('recipe-nesting', () => {
     expect(output.find(x => x.id === 19712)).to.deep.equal(expected)
   })
 
+  it('can build a one-layer recipe with output > 1', () => {
+    let expected = {
+      id: 19112,
+      quantity: 1,
+      output: 5,
+      min_rating: 400,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      components: [
+        {id: 19725, quantity: 3}
+      ]
+    }
+
+    expect(output.find(x => x.id === 19112)).to.deep.equal(expected)
+  })
+
   it('can build a two-layer recipe', () => {
     let expected = {
       id: 12988,
@@ -297,7 +324,7 @@ describe('recipe-nesting', () => {
     }
     let expectedRoot = {
       id: 19679,
-      quantity: 5,
+      quantity: 1,
       output: 5,
       min_rating: 0,
       disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
