@@ -12,6 +12,7 @@ npm install gw2e-recipe-nesting
 ```
 
 This module can be used for Node.js as well as browsers using [Browserify](https://github.com/substack/browserify-handbook#how-node_modules-works).
+If you want to calculate the price of the tree generated from this, take a look at [`gw2e-recipe-calculation`](https://github.com/gw2efficiency/recipe-calculation).
 
 ## Usage
 
