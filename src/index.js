@@ -34,7 +34,11 @@ function transformRecipe (recipe) {
 function nestRecipe (recipe, recipes, nestedItems = []) {
   recipe = {...recipe}
 
+  // Make sure we use the nested items by value, because else recipes with
+  // same sub-recipes completely ignore the crafting of them
+  nestedItems = nestedItems.slice()
   nestedItems.push(recipe.id)
+
   recipe.quantity = recipe.quantity || 1
   recipe.components = recipe.components.map(component => {
     component = {...component}
