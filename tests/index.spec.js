@@ -224,6 +224,66 @@ describe('recipe-nesting', () => {
       output_upgrade_id: 9001,
       id: 900011,
       chat_link: '[&CewtAAA=]'
+    },
+    {
+      type: 'Refinement',
+      output_item_id: 99990,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 99991, count: 2}, {item_id: 99992, count: 2}, {item_id: 99993, count: 2}],
+      id: 1293083123,
+      chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'Refinement',
+      output_item_id: 99991,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 99994, count: 2}],
+      id: 987654645,
+      chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'Refinement',
+      output_item_id: 99992,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 99994, count: 2}],
+      id: 767567,
+      chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'Refinement',
+      output_item_id: 99993,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 99994, count: 2}],
+      id: 2344356,
+      chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'Refinement',
+      output_item_id: 99994,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 99995, count: 2}],
+      id: 12421412312,
+      chat_link: '[&CQIAAAA=]'
     }
   ]
 
@@ -493,5 +553,70 @@ describe('recipe-nesting', () => {
     }
 
     expect(output.find(x => x.id === 88772)).to.deep.equal(expected)
+  })
+
+  it('handles recipes with same sub-components', () => {
+    let expected = {
+      id: 99990,
+      output: 1,
+      min_rating: 400,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      quantity: 1,
+      components: [
+        {
+          id: 99991,
+          output: 1,
+          min_rating: 400,
+          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+          quantity: 2,
+          components: [
+            {
+              id: 99994,
+              output: 1,
+              min_rating: 400,
+              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+              quantity: 2,
+              components: [{id: 99995, quantity: 2}]
+            }
+          ]
+        },
+        {
+          id: 99992,
+          output: 1,
+          min_rating: 400,
+          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+          quantity: 2,
+          components: [
+            {
+              id: 99994,
+              output: 1,
+              min_rating: 400,
+              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+              quantity: 2,
+              components: [{id: 99995, quantity: 2}]
+            }
+          ]
+        },
+        {
+          id: 99993,
+          output: 1,
+          min_rating: 400,
+          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+          quantity: 2,
+          components: [
+            {
+              id: 99994,
+              output: 1,
+              min_rating: 400,
+              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+              quantity: 2,
+              components: [{id: 99995, quantity: 2}]
+            }
+          ]
+        }
+      ]
+    }
+
+    expect(output.find(x => x.id === 99990)).to.deep.equal(expected)
   })
 })
