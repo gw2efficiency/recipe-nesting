@@ -233,7 +233,7 @@ describe('recipe-nesting', () => {
       time_to_craft_ms: 2000,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{item_id: 99991, count: 2}, {item_id: 99992, count: 2}, {item_id: 99993, count: 2}],
+      ingredients: [{item_id: 99994, count: 1}, {item_id: 99991, count: 2}, {item_id: 99992, count: 2}, {item_id: 99993, count: 2}],
       id: 1293083123,
       chat_link: '[&CQIAAAA=]'
     },
@@ -563,6 +563,14 @@ describe('recipe-nesting', () => {
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       quantity: 1,
       components: [
+        {
+          id: 99994,
+          output: 1,
+          min_rating: 400,
+          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+          quantity: 1,
+          components: [{id: 99995, quantity: 2}]
+        },
         {
           id: 99991,
           output: 1,

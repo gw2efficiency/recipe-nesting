@@ -31,13 +31,11 @@ function transformRecipe (recipe) {
   return transformed
 }
 
-function nestRecipe (recipe, recipes, nestedItems = []) {
+function nestRecipe (recipe, recipes, ignoreNesting = []) {
   recipe = {...recipe}
 
-  // Make sure we use the nested items by value, because else recipes with
-  // same sub-recipes completely ignore the crafting of them
-  nestedItems = nestedItems.slice()
-  nestedItems.push(recipe.id)
+  // Save the nested ids, so we don't run into recursion issues
+  ignoreNesting = ignoreNesting.concat([recipe.id])
 
   recipe.quantity = recipe.quantity || 1
   recipe.components = recipe.components.map(component => {
@@ -53,14 +51,14 @@ function nestRecipe (recipe, recipes, nestedItems = []) {
       return !component.guild ? component : false
     }
 
-    // Don't nest further if we'd run into a recursion
-    if (nestedItems.indexOf(component.id) !== -1) {
+    // Don't nest further, if we'd run into a recursion
+    if (ignoreNesting.indexOf(component.id) !== -1) {
       return !component.guild ? component : {id: ingredientRecipe.id, quantity: component.quantity}
     }
 
     // Found a recipe for the component, let's nest!
-    nestedItems.push(component.id)
-    ingredientRecipe = nestRecipe(ingredientRecipe, recipes, nestedItems)
+    let ignoreNestingComponent = ignoreNesting.concat([component.id])
+    ingredientRecipe = nestRecipe(ingredientRecipe, recipes, ignoreNestingComponent)
     ingredientRecipe.quantity = component.quantity
     return ingredientRecipe
   })
