@@ -235,7 +235,12 @@ describe('recipe-nesting', () => {
       time_to_craft_ms: 2000,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{item_id: 99994, count: 1}, {item_id: 99991, count: 2}, {item_id: 99992, count: 2}, {item_id: 99993, count: 2}],
+      ingredients: [
+        {item_id: 99994, count: 1},
+        {item_id: 99991, count: 2},
+        {item_id: 99992, count: 2},
+        {item_id: 99993, count: 2}
+      ],
       id: 1293083123,
       chat_link: '[&CQIAAAA=]'
     },
@@ -492,10 +497,10 @@ describe('recipe-nesting', () => {
       disciplines: []
     }
 
-    expect(module(input).find(x => x.id === 4567)).to.deep.equal(expected)
+    expect(output.find(x => x.id === 4567)).to.deep.equal(expected)
   })
 
-  it('handles self-referencing recipes', () => {
+  it('doesnt thrown an error for self-referencing recipes', () => {
     let expected = {
       id: 88771,
       quantity: 1,
@@ -517,51 +522,56 @@ describe('recipe-nesting', () => {
     expect(output.find(x => x.id === 88771)).to.deep.equal(expected)
   })
 
-  it('handles recursive recipes', () => {
+  it('doesnt thrown an error for recursive recipes', () => {
     let expected = {
       id: 88772,
       output: 1,
-      min_rating: 400,
-      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-      quantity: 1,
-      components: [
-        {id: 88770, quantity: 2},
-        {
-          id: 88773,
+      components: [{id: 88770, quantity: 2}, {
+        id: 88773,
+        output: 1,
+        components: [{
+          id: 88774,
           output: 1,
+          components: [{
+            id: 88772,
+            output: 1,
+            components: [{id: 88770, quantity: 2}, {id: 88773, quantity: 2}],
+            min_rating: 400,
+            disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+            quantity: 2
+          }],
           min_rating: 400,
           disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          quantity: 2,
-          components: [
-            {
-              id: 88774,
-              output: 1,
-              min_rating: 400,
-              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-              quantity: 2,
-              components: [{id: 88772, quantity: 2}]
-            },
-            {
-              id: 88775,
-              components: [
-                {id: 88772, quantity: 2},
-                {id: 88775, quantity: 1}
-              ],
-              disciplines: ['Scribe'],
-              min_rating: 250,
-              output: 1,
-              quantity: 1,
-              upgrade_id: 9001
-            }
-          ]
-        }
-      ]
+          quantity: 2
+        }, {
+          id: 88775,
+          output: 1,
+          components: [{id: 88775, quantity: 1}, {
+            id: 88772,
+            output: 1,
+            components: [{id: 88770, quantity: 2}, {id: 88773, quantity: 2}],
+            min_rating: 400,
+            disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+            quantity: 2
+          }],
+          min_rating: 250,
+          disciplines: ['Scribe'],
+          upgrade_id: 9001,
+          quantity: 1
+        }],
+        min_rating: 400,
+        disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+        quantity: 2
+      }],
+      min_rating: 400,
+      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+      quantity: 1
     }
 
     expect(output.find(x => x.id === 88772)).to.deep.equal(expected)
   })
 
-  it('handles recipes with same sub-components', () => {
+  it('works for recipes with same sub-components', () => {
     let expected = {
       id: 99990,
       output: 1,

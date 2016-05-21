@@ -1,7 +1,27 @@
 function nest (recipes) {
   recipes = recipes.map(transformRecipe)
-  recipes = recipes.map(r => nestRecipe(r, recipes))
-  return recipes
+
+  // Transform the array into a id map to eliminate "find" calls,
+  // which can be very slow if called on a big array
+  recipes = toMap(recipes)
+
+  // Nest all recipes
+  for (let key in recipes) {
+    recipes[key] = nestRecipe(recipes[key], recipes)
+  }
+
+  // Remove the internal flag for nested recipes
+  for (let key in recipes) {
+    delete recipes[key]['nested']
+  }
+
+  return Object.values(recipes)
+}
+
+function toMap (recipes) {
+  let recipeMap = []
+  recipes.map(recipe => recipeMap[recipe.id] = recipe)
+  return recipeMap
 }
 
 function transformRecipe (recipe) {
@@ -39,35 +59,41 @@ function transformRecipe (recipe) {
   return transformed
 }
 
-function nestRecipe (recipe, recipes, ignoreNesting = []) {
-  recipe = {...recipe}
+function nestRecipe (recipe, recipes) {
+  // This recipe was already nested as a part of another recipe
+  if (recipe.nested) {
+    return recipe
+  }
 
-  // Save the nested ids, so we don't run into recursion issues
-  ignoreNesting = ignoreNesting.concat([recipe.id])
-
+  // Calculate this recipe and all sub-components
+  recipe.nested = true
   recipe.quantity = recipe.quantity || 1
   recipe.components = recipe.components.map(component => {
-    component = {...component}
+    let index = !component.guild
+      ? component.id
+      : recipes.findIndex(x => x && x.upgrade_id === component.id)
 
     // Try and find the component in the recipes. If we cant find it,
     // either give back the raw component or discard if it's a guild upgrade
-    let ingredientRecipe = !component.guild
-      ? recipes.find(x => x.id === component.id)
-      : recipes.find(x => x.upgrade_id === component.id)
-
-    if (!ingredientRecipe) {
+    if (!recipes[index]) {
       return !component.guild ? component : false
     }
 
-    // Don't nest further, if we'd run into a recursion
-    if (ignoreNesting.indexOf(component.id) !== -1) {
-      return !component.guild ? component : {id: ingredientRecipe.id, quantity: component.quantity}
+    // The component is the recipe! Abort! D:
+    if (recipe.id === index) {
+      return !component.guild ? component : {id: recipe.id, quantity: component.quantity}
     }
 
-    // Found a recipe for the component, let's nest!
-    let ignoreNestingComponent = ignoreNesting.concat([component.id])
-    ingredientRecipe = nestRecipe(ingredientRecipe, recipes, ignoreNestingComponent)
+    // The component recipe is not nested yet, so we nest it now!
+    if (!recipes[index].nested) {
+      recipes[index] = nestRecipe(recipes[index], recipes)
+    }
+
+    // Make sure we use a copy of the object, and insert it into the components
+    let ingredientRecipe = {...recipes[index]}
     ingredientRecipe.quantity = component.quantity
+    delete ingredientRecipe.nested
+
     return ingredientRecipe
   })
 
