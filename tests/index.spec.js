@@ -14,7 +14,9 @@ describe('recipe-nesting', () => {
       flags: ['AutoLearned'],
       ingredients: [{item_id: 19725, count: 3}],
       id: 2,
-      chat_link: '[&CQIAAAA=]'
+      chat_link: '[&CQIAAAA=]',
+      output_item_count_range: '1-10',
+      achievement_id: 12
     },
     {
       type: 'Refinement',
@@ -294,6 +296,8 @@ describe('recipe-nesting', () => {
       id: 19712,
       quantity: 1,
       output: 1,
+      output_range: '1-10',
+      achievement_id: 12,
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       components: [
@@ -331,6 +335,8 @@ describe('recipe-nesting', () => {
           id: 19712,
           quantity: 2,
           output: 1,
+          output_range: '1-10',
+          achievement_id: 12,
           min_rating: 400,
           disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
           components: [

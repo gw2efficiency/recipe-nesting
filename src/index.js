@@ -28,6 +28,14 @@ function transformRecipe (recipe) {
     transformed.upgrade_id = recipe.output_upgrade_id
   }
 
+  if (recipe.output_item_count_range) {
+    transformed.output_range = recipe.output_item_count_range
+  }
+
+  if (recipe.achievement_id) {
+    transformed.achievement_id = recipe.achievement_id
+  }
+
   return transformed
 }
 
