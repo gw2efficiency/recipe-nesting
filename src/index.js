@@ -94,7 +94,7 @@ function nestRecipe (recipe, recipes, decorations) {
 
     // The component recipe is not nested yet, so we nest it now!
     if (!recipes[index].nested) {
-      recipes[index] = nestRecipe(recipes[index], recipes)
+      recipes[index] = nestRecipe(recipes[index], recipes, decorations)
     }
 
     // Make sure we use a copy of the object, and insert it into the components
