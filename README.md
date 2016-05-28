@@ -46,7 +46,14 @@ let recipes = [
   // ...
 ]
 
-let nestedRecipes = nesting(recipes)
+// This is a (optional) map of guild upgrade ids to item ids. This should only be used
+// for type == Decoration, and resolves all the Basic Decorations needed for scribing
+let decorations = {
+  42: 1337,
+  // ...
+}
+
+let nestedRecipes = nesting(recipes, decorations)
 // The output is an array consisting of the following:
 nestedRecipes = [
   {

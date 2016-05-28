@@ -488,6 +488,38 @@ describe('recipe-nesting', () => {
     expect(output.find(x => x.id === 1234)).to.deep.equal(expected)
   })
 
+  it('can include guild item decorations', () => {
+    let input = [{
+      type: 'Refinement',
+      output_item_id: 1,
+      output_item_count: 1,
+      min_rating: 400,
+      time_to_craft_ms: 2000,
+      disciplines: ['Scribe'],
+      flags: ['AutoLearned'],
+      ingredients: [{item_id: 2, count: 2}],
+      guild_ingredients: [{upgrade_id: 42, count: 1}],
+      id: 1,
+      chat_link: '[&CQIAAAA=]'
+    }]
+    let decorations = {42: 1337}
+    let output = module(input, decorations)
+
+    let expected = {
+      id: 1,
+      output: 1,
+      components: [
+        {id: 2, quantity: 2},
+        {id: 1337, quantity: 1}
+      ],
+      min_rating: 400,
+      disciplines: ['Scribe'],
+      quantity: 1
+    }
+
+    expect(output.find(x => x.id === 1)).to.deep.equal(expected)
+  })
+
   it('filters components', () => {
     let expected = {
       id: 4567,

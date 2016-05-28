@@ -1,4 +1,4 @@
-function nest (recipes) {
+function nest (recipes, decorations = {}) {
   recipes = recipes.map(transformRecipe)
 
   // Transform the array into a id map to eliminate "find" calls,
@@ -7,7 +7,7 @@ function nest (recipes) {
 
   // Nest all recipes
   for (let key in recipes) {
-    recipes[key] = nestRecipe(recipes[key], recipes)
+    recipes[key] = nestRecipe(recipes[key], recipes, decorations)
   }
 
   // Remove the internal flag for nested recipes
@@ -59,7 +59,7 @@ function transformRecipe (recipe) {
   return transformed
 }
 
-function nestRecipe (recipe, recipes) {
+function nestRecipe (recipe, recipes, decorations) {
   // This recipe was already nested as a part of another recipe
   if (recipe.nested) {
     return recipe
@@ -73,10 +73,18 @@ function nestRecipe (recipe, recipes) {
       ? component.id
       : recipes.findIndex(x => x && x.upgrade_id === component.id)
 
-    // Try and find the component in the recipes. If we cant find it,
-    // either give back the raw component or discard if it's a guild upgrade
-    if (!recipes[index]) {
-      return !component.guild ? component : false
+    // We could not find a recipe for a normal component, so
+    // we just give it back (e.g. basic woods)
+    if (!recipes[index] && !component.guild) {
+      return component
+    }
+
+    // If it is a guild component and we can't find a recipe for it,
+    // check if we can resolve it into an item, else ignore it
+    if (!recipes[index] && component.guild) {
+      return decorations[component.id]
+        ? {id: decorations[component.id], quantity: component.quantity}
+        : false
     }
 
     // The component is the recipe! Abort! D:
