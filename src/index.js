@@ -1,5 +1,13 @@
+const recipeCalculation = require('gw2e-recipe-calculation')
+const vendorItems = Object.keys(recipeCalculation.static.vendorItems).map(x => parseInt(x, 10))
+
 function nest (recipes, decorations = {}) {
   recipes = recipes.map(transformRecipe)
+
+  // Ignore recipes that result in items that can be bought from vendors
+  // This removes issues with wrong quantities in resulting recipes and
+  // the wrong items (= container items) showing up in the shopping list
+  recipes = recipes.filter(r => vendorItems.indexOf(r.id) === -1)
 
   // Transform the array into a id map to eliminate "find" calls,
   // which can be very slow if called on a big array

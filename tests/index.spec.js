@@ -291,6 +291,14 @@ describe('recipe-nesting', () => {
       ingredients: [{item_id: 99995, count: 2}],
       id: 12421412312,
       chat_link: '[&CQIAAAA=]'
+    },
+    {
+      type: 'CraftingMaterial',
+      output_item_id: 12235,
+      output_item_count: 25,
+      disciplines: ['Double Click'],
+      ingredients: [{item_id: 12776, count: 1}],
+      id: -1626
     }
   ]
 
@@ -710,5 +718,9 @@ describe('recipe-nesting', () => {
     }
 
     expect(output.find(x => x.id === 99990)).to.deep.equal(expected)
+  })
+
+  it('ignores recipes for vendor items', () => {
+    expect(output.find(x => x.id === 12235)).to.be.undefined
   })
 })
