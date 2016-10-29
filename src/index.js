@@ -1,7 +1,7 @@
-const recipeCalculation = require('gw2e-recipe-calculation')
-const vendorItems = Object.keys(recipeCalculation.static.vendorItems).map(x => parseInt(x, 10))
+import {staticItems} from 'gw2e-recipe-calculation'
+const vendorItems = Object.keys(staticItems.vendorItems).map(x => parseInt(x, 10))
 
-function nest (recipes, decorations = {}) {
+export default function nest (recipes, decorations = {}) {
   recipes = recipes.map(transformRecipe)
 
   // Ignore recipes that result in items that can be bought from vendors
@@ -28,12 +28,19 @@ function nest (recipes, decorations = {}) {
 
 function toMap (recipes) {
   let recipeMap = []
-  recipes.map(recipe => recipeMap[recipe.id] = recipe)
+
+  recipes.map(recipe => {
+    recipeMap[recipe.id] = recipe
+  })
+
   return recipeMap
 }
 
 function transformRecipe (recipe) {
-  let components = recipe.ingredients.map(i => ({id: i.item_id, quantity: i.count}))
+  let components = recipe.ingredients.map(i => ({
+    id: i.item_id,
+    quantity: i.count
+  }))
 
   if (recipe.guild_ingredients) {
     let guildIngredients = recipe.guild_ingredients.map(i => ({
@@ -97,7 +104,9 @@ function nestRecipe (recipe, recipes, decorations) {
 
     // The component is the recipe! Abort! D:
     if (recipe.id === index) {
-      return !component.guild ? component : {id: recipe.id, quantity: component.quantity}
+      return !component.guild
+        ? component
+        : {id: recipe.id, quantity: component.quantity}
     }
 
     // The component recipe is not nested yet, so we nest it now!
@@ -126,5 +135,3 @@ function nestRecipe (recipe, recipes, decorations) {
 
   return recipe
 }
-
-module.exports = nest

@@ -19,7 +19,7 @@ If you want to calculate the price of the tree generated from this, take a look 
 ## Usage
 
 ```js
-const nesting = require('gw2e-recipe-nesting')
+import nesting from 'gw2e-recipe-nesting'
 
 // Expects a list of recipes in the API format
 // -> https://github.com/arenanet/api-cdi/blob/master/v2/recipes.js

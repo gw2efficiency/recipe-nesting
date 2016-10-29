@@ -1,6 +1,6 @@
 /* eslint-env node, mocha */
-const expect = require('chai').expect
-const module = require('../src/index.js')
+import {expect} from 'chai'
+import module from '../src/index.js'
 
 describe('recipe-nesting', () => {
   let input = [
