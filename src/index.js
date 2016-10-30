@@ -9,13 +9,14 @@ export default function nest (recipes, decorations = {}) {
   // the wrong items (= container items) showing up in the shopping list
   recipes = recipes.filter(r => vendorItems.indexOf(r.id) === -1)
 
-  // Transform the array into a id map to eliminate "find" calls,
-  // which can be very slow if called on a big array
-  recipes = toMap(recipes)
+  // Transform the array into a id maps to eliminate "find" calls, which can be very
+  // slow if called on a big array (since they have to be called on every nesting)
+  recipes = idMap(recipes)
+  const recipeUpgrades = upgradeMap(recipes)
 
   // Nest all recipes
   for (let key in recipes) {
-    recipes[key] = nestRecipe(recipes[key], recipes, decorations)
+    recipes[key] = nestRecipe(recipes[key], recipes, recipeUpgrades, decorations)
   }
 
   // Remove the internal flag for nested recipes
@@ -26,14 +27,30 @@ export default function nest (recipes, decorations = {}) {
   return Object.values(recipes)
 }
 
-function toMap (recipes) {
-  let recipeMap = []
+function idMap (recipes) {
+  let recipeMap = {}
 
   recipes.map(recipe => {
     recipeMap[recipe.id] = recipe
   })
 
   return recipeMap
+}
+
+function upgradeMap (recipeMap) {
+  let recipeUpgrades = {}
+
+  for (let key in recipeMap) {
+    const upgradeId = recipeMap[key].upgrade_id
+
+    if (!upgradeId) {
+      continue
+    }
+
+    recipeUpgrades[upgradeId] = key
+  }
+
+  return recipeUpgrades
 }
 
 function transformRecipe (recipe) {
@@ -74,7 +91,7 @@ function transformRecipe (recipe) {
   return transformed
 }
 
-function nestRecipe (recipe, recipes, decorations) {
+function nestRecipe (recipe, recipes, recipeUpgrades, decorations) {
   // This recipe was already nested as a part of another recipe
   if (recipe.nested) {
     return recipe
@@ -86,17 +103,17 @@ function nestRecipe (recipe, recipes, decorations) {
   recipe.components = recipe.components.map(component => {
     let index = !component.guild
       ? component.id
-      : recipes.findIndex(x => x && x.upgrade_id === component.id)
+      : recipeUpgrades[component.id]
 
     // We could not find a recipe for a normal component, so
     // we just give it back (e.g. basic woods)
-    if (!recipes[index] && !component.guild) {
+    if (!component.guild && !recipes[index]) {
       return component
     }
 
     // If it is a guild component and we can't find a recipe for it,
     // check if we can resolve it into an item, else ignore it
-    if (!recipes[index] && component.guild) {
+    if (component.guild && !recipes[index]) {
       return decorations[component.id]
         ? {id: decorations[component.id], quantity: component.quantity}
         : false
@@ -111,7 +128,7 @@ function nestRecipe (recipe, recipes, decorations) {
 
     // The component recipe is not nested yet, so we nest it now!
     if (!recipes[index].nested) {
-      recipes[index] = nestRecipe(recipes[index], recipes, decorations)
+      recipes[index] = nestRecipe(recipes[index], recipes, recipeUpgrades, decorations)
     }
 
     // Make sure we use a copy of the object, and insert it into the components

@@ -602,46 +602,72 @@ describe('recipe-nesting', () => {
     let expected = {
       id: 88772,
       output: 1,
-      components: [{id: 88770, quantity: 2}, {
-        id: 88773,
-        output: 1,
-        components: [{
-          id: 88774,
-          output: 1,
-          components: [{
-            id: 88772,
-            output: 1,
-            components: [{id: 88770, quantity: 2}, {id: 88773, quantity: 2}],
-            min_rating: 400,
-            disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-            quantity: 2
-          }],
-          min_rating: 400,
-          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          quantity: 2
-        }, {
-          id: 88775,
-          output: 1,
-          components: [{id: 88775, quantity: 1}, {
-            id: 88772,
-            output: 1,
-            components: [{id: 88770, quantity: 2}, {id: 88773, quantity: 2}],
-            min_rating: 400,
-            disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-            quantity: 2
-          }],
-          min_rating: 250,
-          disciplines: ['Scribe'],
-          upgrade_id: 9001,
-          quantity: 1
-        }],
-        min_rating: 400,
-        disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-        quantity: 2
-      }],
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-      quantity: 1
+      quantity: 1,
+      components: [
+        {id: 88770, quantity: 2},
+        {
+          id: 88773,
+          output: 1,
+          min_rating: 400,
+          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+          quantity: 2,
+          components: [
+            {
+              id: 88774,
+              output: 1,
+              min_rating: 400,
+              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+              quantity: 2,
+              components: [{
+                id: 88772,
+                output: 1,
+                components: [
+                  {id: 88770, quantity: 2},
+                  {id: 88773, quantity: 2}
+                ],
+                min_rating: 400,
+                disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+                quantity: 2
+              }]
+            },
+            {
+              id: 88775,
+              output: 1,
+              min_rating: 250,
+              disciplines: ['Scribe'],
+              upgrade_id: 9001,
+              quantity: 1,
+              components: [
+                {
+                  id: 88772,
+                  output: 1,
+                  min_rating: 400,
+                  disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
+                  quantity: 2,
+                  components: [
+                    {id: 88770, quantity: 2},
+                    {id: 88773, quantity: 2}
+                  ]
+                },
+                {
+                  id: 88775,
+                  disciplines: ['Scribe'],
+                  min_rating: 250,
+                  output: 1,
+                  quantity: 1,
+                  upgrade_id: 9001,
+                  components: [
+                    {id: 88772, quantity: 2},
+                    {id: 9001, guild: true, quantity: 1}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
 
     expect(output.find(x => x.id === 88772)).to.deep.equal(expected)
