@@ -18,6 +18,6 @@
     "gw2e-recipe-calculation": "^2.0.0"
   },
   "devDependencies": {
-    "abc-environment": "^1.0.12"
+    "abc-environment": "^2.0.0"
   }
 }

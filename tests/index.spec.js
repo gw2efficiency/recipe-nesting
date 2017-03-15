@@ -747,6 +747,6 @@ describe('recipe-nesting', () => {
   })
 
   it('ignores recipes for vendor items', () => {
-    expect(output.find(x => x.id === 12235)).to.be.undefined
+    expect(output.find(x => x.id === 12235)).to.equal(undefined)
   })
 })
