@@ -315,7 +315,8 @@ describe('recipe-nesting', () => {
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       components: [
         {id: 19725, quantity: 3}
-      ]
+      ],
+      recipe_id: 2
     }
 
     expect(output.find(x => x.id === 19712)).to.deep.equal(expected)
@@ -330,7 +331,8 @@ describe('recipe-nesting', () => {
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       components: [
         {id: 19725, quantity: 3}
-      ]
+      ],
+      recipe_id: 2
     }
 
     expect(output.find(x => x.id === 19112)).to.deep.equal(expected)
@@ -354,7 +356,8 @@ describe('recipe-nesting', () => {
           disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
           components: [
             {id: 19725, quantity: 3}
-          ]
+          ],
+          recipe_id: 2
         },
         {
           id: 19685,
@@ -364,9 +367,11 @@ describe('recipe-nesting', () => {
           disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman', 'Jeweler'],
           components: [
             {id: 19701, quantity: 2}
-          ]
+          ],
+          recipe_id: 21
         }
-      ]
+      ],
+      recipe_id: 39
     }
 
     expect(output.find(x => x.id === 12988)).to.deep.equal(expected)
@@ -386,7 +391,8 @@ describe('recipe-nesting', () => {
           output: 1,
           min_rating: 0,
           disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          components: [{id: 19723, quantity: 3}]
+          components: [{id: 19723, quantity: 3}],
+          recipe_id: 3
         },
         {
           id: 19679,
@@ -397,9 +403,11 @@ describe('recipe-nesting', () => {
           components: [
             {id: 19697, quantity: 10},
             {id: 19704, quantity: 1}
-          ]
+          ],
+          recipe_id: 16
         }
-      ]
+      ],
+      recipe_id: 30
     }
     let expectedRoot = {
       id: 19679,
@@ -410,7 +418,8 @@ describe('recipe-nesting', () => {
       components: [
         {id: 19697, quantity: 10},
         {id: 19704, quantity: 1}
-      ]
+      ],
+      recipe_id: 16
     }
 
     expect(output.find(x => x.id === 12990)).to.deep.equal(expectedLeaf)
@@ -443,9 +452,11 @@ describe('recipe-nesting', () => {
           output: 1,
           min_rating: 150,
           disciplines: ['Leatherworker', 'Armorsmith', 'Tailor', 'Scribe'],
-          components: [{id: 19741, quantity: 2}]
+          components: [{id: 19741, quantity: 2}],
+          recipe_id: 7
         }
-      ]
+      ],
+      recipe_id: 69
     }
 
     expect(output.find(x => x.id === 19814)).to.deep.equal(expected)
@@ -486,11 +497,14 @@ describe('recipe-nesting', () => {
                   id: 19704,
                   quantity: 1
                 }
-              ]
+              ],
+              recipe_id: 16
             }
-          ]
+          ],
+          recipe_id: 11756
         }
-      ]
+      ],
+      recipe_id: 69
     }
 
     expect(output.find(x => x.id === 1234)).to.deep.equal(expected)
@@ -544,9 +558,11 @@ describe('recipe-nesting', () => {
             ],
             min_rating: 400,
             disciplines: ['Scribe'],
-            quantity: 2
+            quantity: 2,
+            recipe_id: 1
           }
-        ]
+        ],
+        recipe_id: 2
       },
       {
         id: 1002,
@@ -557,7 +573,8 @@ describe('recipe-nesting', () => {
         components: [
           {id: 2, quantity: 2},
           {id: 1337, quantity: 1}
-        ]
+        ],
+        recipe_id: 1
       }
     ]
 
@@ -570,7 +587,8 @@ describe('recipe-nesting', () => {
       quantity: 1,
       output: 1,
       min_rating: null,
-      disciplines: []
+      disciplines: [],
+      recipe_id: 69
     }
 
     expect(output.find(x => x.id === 4567)).to.deep.equal(expected)
@@ -592,7 +610,8 @@ describe('recipe-nesting', () => {
           id: 88770,
           quantity: 2
         }
-      ]
+      ],
+      recipe_id: 2
     }
 
     expect(output.find(x => x.id === 88771)).to.deep.equal(expected)
@@ -629,8 +648,10 @@ describe('recipe-nesting', () => {
                 ],
                 min_rating: 400,
                 disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-                quantity: 2
-              }]
+                quantity: 2,
+                recipe_id: 2
+              }],
+              recipe_id: 2
             },
             {
               id: 88775,
@@ -649,7 +670,8 @@ describe('recipe-nesting', () => {
                   components: [
                     {id: 88770, quantity: 2},
                     {id: 88773, quantity: 2}
-                  ]
+                  ],
+                  recipe_id: 2
                 },
                 {
                   id: 88775,
@@ -661,13 +683,17 @@ describe('recipe-nesting', () => {
                   components: [
                     {id: 88772, quantity: 2},
                     {id: 9001, guild: true, quantity: 1}
-                  ]
+                  ],
+                  recipe_id: 900011
                 }
-              ]
+              ],
+              recipe_id: 900011
             }
-          ]
+          ],
+          recipe_id: 2
         }
-      ]
+      ],
+      recipe_id: 2
     }
 
     expect(output.find(x => x.id === 88772)).to.deep.equal(expected)
@@ -687,7 +713,8 @@ describe('recipe-nesting', () => {
           min_rating: 400,
           disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
           quantity: 1,
-          components: [{id: 99995, quantity: 2}]
+          components: [{id: 99995, quantity: 2}],
+          recipe_id: 12421412312
         },
         {
           id: 99991,
@@ -702,9 +729,11 @@ describe('recipe-nesting', () => {
               min_rating: 400,
               disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
               quantity: 2,
-              components: [{id: 99995, quantity: 2}]
+              components: [{id: 99995, quantity: 2}],
+              recipe_id: 12421412312
             }
-          ]
+          ],
+          recipe_id: 987654645
         },
         {
           id: 99992,
@@ -719,9 +748,11 @@ describe('recipe-nesting', () => {
               min_rating: 400,
               disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
               quantity: 2,
-              components: [{id: 99995, quantity: 2}]
+              components: [{id: 99995, quantity: 2}],
+              recipe_id: 12421412312
             }
-          ]
+          ],
+          recipe_id: 767567
         },
         {
           id: 99993,
@@ -736,11 +767,14 @@ describe('recipe-nesting', () => {
               min_rating: 400,
               disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
               quantity: 2,
-              components: [{id: 99995, quantity: 2}]
+              components: [{id: 99995, quantity: 2}],
+              recipe_id: 12421412312
             }
-          ]
+          ],
+          recipe_id: 2344356
         }
-      ]
+      ],
+      recipe_id: 1293083123
     }
 
     expect(output.find(x => x.id === 99990)).to.deep.equal(expected)
