@@ -439,14 +439,6 @@ describe('recipe-nesting', () => {
           quantity: 3
         },
         {
-          id: 24285,
-          quantity: 3
-        },
-        {
-          id: 24286,
-          quantity: 3
-        },
-        {
           id: 19742,
           quantity: 1,
           output: 1,
@@ -454,6 +446,14 @@ describe('recipe-nesting', () => {
           disciplines: ['Leatherworker', 'Armorsmith', 'Tailor', 'Scribe'],
           components: [{id: 19741, quantity: 2}],
           recipe_id: 7
+        },
+        {
+          id: 24285,
+          quantity: 3
+        },
+        {
+          id: 24286,
+          quantity: 3
         }
       ],
       recipe_id: 69

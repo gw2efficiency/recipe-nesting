@@ -143,9 +143,6 @@ function nestRecipe (recipe, recipes, recipeUpgrades, decorations) {
   // Filter guild components that we don't have in our recipes :(
   recipe.components = recipe.components.filter(x => x)
 
-  // Sort components so that non-craftable components are always on top
-  recipe.components.sort((a, b) => (a.components ? 1 : 0) - (b.components ? 1 : 0))
-
   // Throw out the components if they are empty (= only non-matched guild recipes)
   if (recipe.components.length === 0) {
     delete recipe.components
