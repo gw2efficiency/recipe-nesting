@@ -10,7 +10,7 @@ describe('recipe-nesting', () => {
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 19725, count: 3 }],
+      ingredients: [{ id: 19725, type: 'Item', count: 3 }],
       id: 2,
       chat_link: '[&CQIAAAA=]',
       output_item_count_range: '1-10',
@@ -23,7 +23,7 @@ describe('recipe-nesting', () => {
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 19725, count: 3 }],
+      ingredients: [{ id: 19725, type: 'Item', count: 3 }],
       id: 2,
       chat_link: '[&CQIAAAA=]',
     },
@@ -34,7 +34,7 @@ describe('recipe-nesting', () => {
       min_rating: 400,
       disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman', 'Jeweler'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 19701, count: 2 }],
+      ingredients: [{ id: 19701, type: 'Item', count: 2 }],
       id: 21,
       chat_link: '[&CRUAAAA=]',
     },
@@ -46,8 +46,9 @@ describe('recipe-nesting', () => {
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
       ingredients: [
-        { item_id: 19712, count: 2 },
-        { item_id: 19685, count: 3 },
+        { id: 19712, type: 'Item', count: 2 },
+        { id: 19685, type: 'Item', count: 3 },
+        { id: 1, type: 'Currency', count: 1_00_00 },
       ],
       id: 39,
       chat_link: '[&CScAAAA=]',
@@ -59,7 +60,7 @@ describe('recipe-nesting', () => {
       min_rating: 0,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 19723, count: 3 }],
+      ingredients: [{ id: 19723, type: 'Item', count: 3 }],
       id: 3,
       chat_link: '[&CQMAAAA=]',
     },
@@ -71,8 +72,8 @@ describe('recipe-nesting', () => {
       disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
       ingredients: [
-        { item_id: 19697, count: 10 },
-        { item_id: 19704, count: 1 },
+        { id: 19697, type: 'Item', count: 10 },
+        { id: 19704, type: 'Item', count: 1 },
       ],
       id: 16,
       chat_link: '[&CRAAAAA=]',
@@ -85,8 +86,8 @@ describe('recipe-nesting', () => {
       disciplines: ['Artificer', 'Weaponsmith', 'Huntsman'],
       flags: ['AutoLearned'],
       ingredients: [
-        { item_id: 19710, count: 2 },
-        { item_id: 19679, count: 3 },
+        { id: 19710, type: 'Item', count: 2 },
+        { id: 19679, type: 'Item', count: 3 },
       ],
       id: 30,
       chat_link: '[&CR4AAAA=]',
@@ -98,7 +99,7 @@ describe('recipe-nesting', () => {
       min_rating: 150,
       disciplines: ['Leatherworker', 'Armorsmith', 'Tailor', 'Scribe'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 19741, count: 2 }],
+      ingredients: [{ id: 19741, type: 'Item', count: 2 }],
       id: 7,
       chat_link: '[&CQcAAAA=]',
     },
@@ -110,10 +111,10 @@ describe('recipe-nesting', () => {
       disciplines: ['Leatherworker', 'Armorsmith', 'Tailor'],
       flags: ['AutoLearned'],
       ingredients: [
-        { item_id: 24284, count: 3 },
-        { item_id: 19742, count: 1 },
-        { item_id: 24285, count: 3 },
-        { item_id: 24286, count: 3 },
+        { id: 24284, type: 'Item', count: 3 },
+        { id: 19742, type: 'Item', count: 1 },
+        { id: 24285, type: 'Item', count: 3 },
+        { id: 24286, type: 'Item', count: 3 },
       ],
       id: 69,
       chat_link: '[&CUUAAAA=]',
@@ -125,10 +126,10 @@ describe('recipe-nesting', () => {
       min_rating: 175,
       disciplines: ['Leatherworker', 'Armorsmith', 'Tailor'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 1337, count: 1 }],
-      guild_ingredients: [
-        { upgrade_id: 696, count: 7 },
-        { upgrade_id: 1234567, count: 7 },
+      ingredients: [
+        { id: 1337, type: 'Item', count: 1 },
+        { id: 696, type: 'GuildUpgrade', count: 7 },
+        { id: 1234567, type: 'GuildUpgrade', count: 7 },
       ],
       id: 69,
       chat_link: '[&CUUAAAA=]',
@@ -140,7 +141,7 @@ describe('recipe-nesting', () => {
       min_rating: 250,
       disciplines: ['Scribe'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 19679, count: 3 }],
+      ingredients: [{ id: 19679, type: 'Item', count: 3 }],
       output_upgrade_id: 696,
       id: 11756,
       chat_link: '[&CewtAAA=]',
@@ -151,10 +152,9 @@ describe('recipe-nesting', () => {
       output_item_count: 1,
       disciplines: [],
       flags: ['AutoLearned'],
-      ingredients: [],
-      guild_ingredients: [
-        { upgrade_id: 9999998, count: 7 },
-        { upgrade_id: 9999999, count: 7 },
+      ingredients: [
+        { id: 9999998, type: 'GuildUpgrade', count: 7 },
+        { id: 9999999, type: 'GuildUpgrade', count: 7 },
       ],
       id: 69,
       chat_link: '[&CUUAAAA=]',
@@ -167,8 +167,8 @@ describe('recipe-nesting', () => {
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
       ingredients: [
-        { item_id: 88771, count: 3 },
-        { item_id: 88770, count: 2 },
+        { id: 88771, type: 'Item', count: 3 },
+        { id: 88770, type: 'Item', count: 2 },
       ],
       id: 2,
       chat_link: '[&CQIAAAA=]',
@@ -181,8 +181,8 @@ describe('recipe-nesting', () => {
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
       ingredients: [
-        { item_id: 88770, count: 2 },
-        { item_id: 88773, count: 2 },
+        { id: 88770, type: 'Item', count: 2 },
+        { id: 88773, type: 'Item', count: 2 },
       ],
       id: 2,
       chat_link: '[&CQIAAAA=]',
@@ -194,8 +194,10 @@ describe('recipe-nesting', () => {
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 88774, count: 2 }],
-      guild_ingredients: [{ upgrade_id: 9001, count: 1 }],
+      ingredients: [
+        { id: 88774, type: 'Item', count: 2 },
+        { id: 9001, type: 'GuildUpgrade', count: 1 },
+      ],
       id: 2,
       chat_link: '[&CQIAAAA=]',
     },
@@ -206,7 +208,7 @@ describe('recipe-nesting', () => {
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 88772, count: 2 }],
+      ingredients: [{ id: 88772, type: 'Item', count: 2 }],
       id: 2,
       chat_link: '[&CQIAAAA=]',
     },
@@ -217,8 +219,10 @@ describe('recipe-nesting', () => {
       min_rating: 250,
       disciplines: ['Scribe'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 88772, count: 2 }],
-      guild_ingredients: [{ upgrade_id: 9001, count: 1 }],
+      ingredients: [
+        { id: 88772, type: 'Item', count: 2 },
+        { id: 9001, type: 'GuildUpgrade', count: 1 },
+      ],
       output_upgrade_id: 9001,
       id: 900011,
       chat_link: '[&CewtAAA=]',
@@ -231,10 +235,10 @@ describe('recipe-nesting', () => {
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
       ingredients: [
-        { item_id: 99994, count: 1 },
-        { item_id: 99991, count: 2 },
-        { item_id: 99992, count: 2 },
-        { item_id: 99993, count: 2 },
+        { id: 99994, type: 'Item', count: 1 },
+        { id: 99991, type: 'Item', count: 2 },
+        { id: 99992, type: 'Item', count: 2 },
+        { id: 99993, type: 'Item', count: 2 },
       ],
       id: 1293083123,
       chat_link: '[&CQIAAAA=]',
@@ -246,7 +250,7 @@ describe('recipe-nesting', () => {
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 99994, count: 2 }],
+      ingredients: [{ id: 99994, type: 'Item', count: 2 }],
       id: 987654645,
       chat_link: '[&CQIAAAA=]',
     },
@@ -257,7 +261,7 @@ describe('recipe-nesting', () => {
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 99994, count: 2 }],
+      ingredients: [{ id: 99994, type: 'Item', count: 2 }],
       id: 767567,
       chat_link: '[&CQIAAAA=]',
     },
@@ -268,7 +272,7 @@ describe('recipe-nesting', () => {
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 99994, count: 2 }],
+      ingredients: [{ id: 99994, type: 'Item', count: 2 }],
       id: 2344356,
       chat_link: '[&CQIAAAA=]',
     },
@@ -279,7 +283,7 @@ describe('recipe-nesting', () => {
       min_rating: 400,
       disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
       flags: ['AutoLearned'],
-      ingredients: [{ item_id: 99995, count: 2 }],
+      ingredients: [{ id: 99995, type: 'Item', count: 2 }],
       id: 12421412312,
       chat_link: '[&CQIAAAA=]',
     },
@@ -289,7 +293,7 @@ describe('recipe-nesting', () => {
       output_item_count: 25,
       disciplines: ['Double Click'],
       flags: [],
-      ingredients: [{ item_id: 12776, count: 1 }],
+      ingredients: [{ id: 12776, type: 'Item', count: 1 }],
       id: -1626,
       chat_link: '[&FAAAKE=]',
     },
@@ -323,7 +327,7 @@ describe('recipe-nesting', () => {
   })
 
   it('can include guild item decorations', () => {
-    const input = [
+    const input: Array<Recipe> = [
       {
         type: 'Refinement',
         output_item_id: 1001,
@@ -331,7 +335,7 @@ describe('recipe-nesting', () => {
         min_rating: 400,
         disciplines: ['Scribe'],
         flags: ['AutoLearned'],
-        ingredients: [{ item_id: 1002, count: 2 }],
+        ingredients: [{ id: 1002, type: 'Item', count: 2 }],
         id: 2,
         chat_link: '[&CQIAAAA=]',
       },
@@ -342,20 +346,18 @@ describe('recipe-nesting', () => {
         min_rating: 400,
         disciplines: ['Scribe'],
         flags: ['AutoLearned'],
-        ingredients: [{ item_id: 2, count: 2 }],
-        guild_ingredients: [{ upgrade_id: 42, count: 1 }],
+        ingredients: [
+          { id: 2, type: 'Item', count: 2 },
+          { id: 42, type: 'GuildUpgrade', count: 1 },
+        ],
         id: 1,
         chat_link: '[&CQIAAAA=]',
       },
     ]
     const decorations = { 42: 1337 }
+
     const output = nestRecipes(input, decorations)
-
     expect(output).toMatchSnapshot()
-  })
-
-  it('filters components', () => {
-    expect(output.find((x) => x.id === 4567)).toMatchSnapshot()
   })
 
   it('doesnt thrown an error for self-referencing recipes', () => {
@@ -368,6 +370,10 @@ describe('recipe-nesting', () => {
 
   it('works for recipes with same sub-components', () => {
     expect(output.find((x) => x.id === 99990)).toMatchSnapshot()
+  })
+
+  it('ignores recipes with only guild upgrades', () => {
+    expect(output.find((x) => x.id === 4567)).toEqual(undefined)
   })
 
   it('ignores recipes for vendor items', () => {

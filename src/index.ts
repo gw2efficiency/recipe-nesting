@@ -5,12 +5,20 @@ import { DecorationsToItemsMap, Recipe } from './types'
 const vendorItems = Object.keys(staticItems.vendorItems).map((id) => parseInt(id, 10))
 
 export interface NestedRecipe extends TransformedRecipeExternal {
-  components?: Array<NestedRecipe>
+  components: Array<
+    | NestedRecipe
+    | {
+        id: number
+        type: 'Item' | 'Currency'
+        quantity: number
+      }
+  >
 }
 
 interface TransformedRecipeExternal {
   id: number
   quantity: number
+  type: 'Recipe'
   output: number
   recipe_id: number
   min_rating: number | null
@@ -22,7 +30,14 @@ interface TransformedRecipeExternal {
 
 interface TransformedRecipe extends TransformedRecipeExternal {
   nested: boolean
-  components?: Array<{ id: number; quantity: number; guild?: boolean }>
+  components?: Array<
+    | Omit<TransformedRecipe, 'nested'>
+    | {
+        id: number
+        type: 'Item' | 'GuildUpgrade' | 'Currency'
+        quantity: number
+      }
+  >
 }
 
 export function nestRecipes(
@@ -47,31 +62,22 @@ export function nestRecipes(
   }
 
   // Remove the internal flag for nested recipes
-  return Object.values(recipesMap).map((recipe) => omit(recipe, ['nested'])) as Array<NestedRecipe>
+  return Object.values(recipesMap)
+    .map((recipe) => omit(recipe, ['nested']))
+    .filter((recipe) => recipe.components) as Array<NestedRecipe>
 }
 
 function transformRecipe(recipe: Recipe) {
-  let components = recipe.ingredients.map((i) => ({
-    id: i.item_id,
-    quantity: i.count,
-  })) as Array<{
-    id: number
-    quantity: number
-    guild?: boolean
-  }>
-
-  if (recipe.guild_ingredients) {
-    const guildIngredients = recipe.guild_ingredients.map((i) => ({
-      id: i.upgrade_id,
-      quantity: i.count,
-      guild: true,
-    }))
-    components = components.concat(guildIngredients)
-  }
+  const components = recipe.ingredients.map((ingredient) => ({
+    id: ingredient.id,
+    type: ingredient.type,
+    quantity: ingredient.count,
+  }))
 
   const transformed: TransformedRecipe = {
     id: recipe.output_item_id,
     nested: false,
+    type: 'Recipe',
     quantity: 1,
     output: recipe.output_item_count,
     components: components,
@@ -136,25 +142,33 @@ function nestRecipe(
   recipe.nested = true
   recipe.quantity = recipe.quantity || 1
   const components = (recipe.components || []).map((component) => {
-    const id = !component.guild ? component.id : recipeUpgradesMap[component.id]
+    const isGuildUpgrade = component.type === 'GuildUpgrade'
+    const id = isGuildUpgrade ? recipeUpgradesMap[component.id] : component.id
+
+    // Return currency components as they are
+    if (component.type === 'Currency') {
+      return component
+    }
 
     // We could not find a recipe for a normal component, so
-    // we just give it back (e.g. basic woods)
-    if (!component.guild && !recipesMap[id]) {
+    // we just give it back (e.g. basic woods or currencies)
+    if (!isGuildUpgrade && !recipesMap[id]) {
       return component
     }
 
     // If it is a guild component and we can't find a recipe for it,
     // check if we can resolve it into an item, else ignore it
-    if (component.guild && !recipesMap[id]) {
+    if (isGuildUpgrade && !recipesMap[id]) {
       return decorationsMap[component.id]
-        ? { id: decorationsMap[component.id], quantity: component.quantity }
-        : false
+        ? { id: decorationsMap[component.id], type: 'Item' as const, quantity: component.quantity }
+        : false // TODO Return `component` (type='GuildUpgrade'), and handle that in the frontend
     }
 
     // The component is the recipe! Abort! D:
     if (recipe.id === id) {
-      return !component.guild ? component : { id: recipe.id, quantity: component.quantity }
+      return isGuildUpgrade
+        ? { id: recipe.id, type: 'Item' as const, quantity: component.quantity }
+        : component
     }
 
     // The component recipe is not nested yet, so we nest it now!

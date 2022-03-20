@@ -8,8 +8,11 @@ export interface Recipe {
   min_rating?: number
   disciplines: Array<string>
   flags: Array<string>
-  ingredients: Array<{ item_id: number; count: number }>
-  guild_ingredients?: Array<{ upgrade_id: number; count: number }>
+  ingredients: Array<{
+    type: 'Item' | 'GuildUpgrade' | 'Currency'
+    id: number
+    count: number
+  }>
   id: number
   chat_link: string
 }
