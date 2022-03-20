@@ -1,0 +1,648 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`recipe-nesting can build a one-layer recipe 1`] = `
+Object {
+  "achievement_id": 12,
+  "components": Array [
+    Object {
+      "id": 19725,
+      "quantity": 3,
+    },
+  ],
+  "disciplines": Array [
+    "Artificer",
+    "Weaponsmith",
+    "Scribe",
+    "Huntsman",
+  ],
+  "id": 19712,
+  "min_rating": 400,
+  "output": 1,
+  "output_range": "1-10",
+  "quantity": 1,
+  "recipe_id": 2,
+}
+`;
+
+exports[`recipe-nesting can build a one-layer recipe with output > 1 1`] = `
+Object {
+  "components": Array [
+    Object {
+      "id": 19725,
+      "quantity": 3,
+    },
+  ],
+  "disciplines": Array [
+    "Artificer",
+    "Weaponsmith",
+    "Scribe",
+    "Huntsman",
+  ],
+  "id": 19112,
+  "min_rating": 400,
+  "output": 5,
+  "quantity": 1,
+  "recipe_id": 2,
+}
+`;
+
+exports[`recipe-nesting can build a two-layer recipe 1`] = `
+Object {
+  "components": Array [
+    Object {
+      "achievement_id": 12,
+      "components": Array [
+        Object {
+          "id": 19725,
+          "quantity": 3,
+        },
+      ],
+      "disciplines": Array [
+        "Artificer",
+        "Weaponsmith",
+        "Scribe",
+        "Huntsman",
+      ],
+      "id": 19712,
+      "min_rating": 400,
+      "output": 1,
+      "output_range": "1-10",
+      "quantity": 2,
+      "recipe_id": 2,
+    },
+    Object {
+      "components": Array [
+        Object {
+          "id": 19701,
+          "quantity": 2,
+        },
+      ],
+      "disciplines": Array [
+        "Armorsmith",
+        "Artificer",
+        "Weaponsmith",
+        "Scribe",
+        "Huntsman",
+        "Jeweler",
+      ],
+      "id": 19685,
+      "min_rating": 400,
+      "output": 1,
+      "quantity": 3,
+      "recipe_id": 21,
+    },
+  ],
+  "disciplines": Array [
+    "Artificer",
+    "Weaponsmith",
+    "Scribe",
+    "Huntsman",
+  ],
+  "id": 12988,
+  "min_rating": 400,
+  "output": 1,
+  "quantity": 1,
+  "recipe_id": 39,
+}
+`;
+
+exports[`recipe-nesting can build a two-layer recipe with output > 1 1`] = `
+Object {
+  "components": Array [
+    Object {
+      "components": Array [
+        Object {
+          "id": 19723,
+          "quantity": 3,
+        },
+      ],
+      "disciplines": Array [
+        "Artificer",
+        "Weaponsmith",
+        "Scribe",
+        "Huntsman",
+      ],
+      "id": 19710,
+      "min_rating": 0,
+      "output": 1,
+      "quantity": 2,
+      "recipe_id": 3,
+    },
+    Object {
+      "components": Array [
+        Object {
+          "id": 19697,
+          "quantity": 10,
+        },
+        Object {
+          "id": 19704,
+          "quantity": 1,
+        },
+      ],
+      "disciplines": Array [
+        "Armorsmith",
+        "Artificer",
+        "Weaponsmith",
+        "Scribe",
+        "Huntsman",
+      ],
+      "id": 19679,
+      "min_rating": 0,
+      "output": 5,
+      "quantity": 3,
+      "recipe_id": 16,
+    },
+  ],
+  "disciplines": Array [
+    "Artificer",
+    "Weaponsmith",
+    "Huntsman",
+  ],
+  "id": 12990,
+  "min_rating": 50,
+  "output": 1,
+  "quantity": 1,
+  "recipe_id": 30,
+}
+`;
+
+exports[`recipe-nesting can build a two-layer recipe with output > 1 2`] = `
+Object {
+  "components": Array [
+    Object {
+      "id": 19697,
+      "quantity": 10,
+    },
+    Object {
+      "id": 19704,
+      "quantity": 1,
+    },
+  ],
+  "disciplines": Array [
+    "Armorsmith",
+    "Artificer",
+    "Weaponsmith",
+    "Scribe",
+    "Huntsman",
+  ],
+  "id": 19679,
+  "min_rating": 0,
+  "output": 5,
+  "quantity": 1,
+  "recipe_id": 16,
+}
+`;
+
+exports[`recipe-nesting can include guild item decorations 1`] = `
+Array [
+  Object {
+    "components": Array [
+      Object {
+        "components": Array [
+          Object {
+            "id": 2,
+            "quantity": 2,
+          },
+          Object {
+            "id": 1337,
+            "quantity": 1,
+          },
+        ],
+        "disciplines": Array [
+          "Scribe",
+        ],
+        "id": 1002,
+        "min_rating": 400,
+        "output": 1,
+        "quantity": 2,
+        "recipe_id": 1,
+      },
+    ],
+    "disciplines": Array [
+      "Scribe",
+    ],
+    "id": 1001,
+    "min_rating": 400,
+    "output": 1,
+    "quantity": 1,
+    "recipe_id": 2,
+  },
+  Object {
+    "components": Array [
+      Object {
+        "id": 2,
+        "quantity": 2,
+      },
+      Object {
+        "id": 1337,
+        "quantity": 1,
+      },
+    ],
+    "disciplines": Array [
+      "Scribe",
+    ],
+    "id": 1002,
+    "min_rating": 400,
+    "output": 1,
+    "quantity": 1,
+    "recipe_id": 1,
+  },
+]
+`;
+
+exports[`recipe-nesting can include guild item ingredients 1`] = `
+Object {
+  "components": Array [
+    Object {
+      "id": 1337,
+      "quantity": 1,
+    },
+    Object {
+      "components": Array [
+        Object {
+          "components": Array [
+            Object {
+              "id": 19697,
+              "quantity": 10,
+            },
+            Object {
+              "id": 19704,
+              "quantity": 1,
+            },
+          ],
+          "disciplines": Array [
+            "Armorsmith",
+            "Artificer",
+            "Weaponsmith",
+            "Scribe",
+            "Huntsman",
+          ],
+          "id": 19679,
+          "min_rating": 0,
+          "output": 5,
+          "quantity": 3,
+          "recipe_id": 16,
+        },
+      ],
+      "disciplines": Array [
+        "Scribe",
+      ],
+      "id": 77749,
+      "min_rating": 250,
+      "output": 1,
+      "quantity": 7,
+      "recipe_id": 11756,
+      "upgrade_id": 696,
+    },
+  ],
+  "disciplines": Array [
+    "Leatherworker",
+    "Armorsmith",
+    "Tailor",
+  ],
+  "id": 1234,
+  "min_rating": 175,
+  "output": 1,
+  "quantity": 1,
+  "recipe_id": 69,
+}
+`;
+
+exports[`recipe-nesting doesnt thrown an error for recursive recipes 1`] = `
+Object {
+  "components": Array [
+    Object {
+      "id": 88770,
+      "quantity": 2,
+    },
+    Object {
+      "components": Array [
+        Object {
+          "components": Array [
+            Object {
+              "components": Array [
+                Object {
+                  "id": 88770,
+                  "quantity": 2,
+                },
+                Object {
+                  "id": 88773,
+                  "quantity": 2,
+                },
+              ],
+              "disciplines": Array [
+                "Artificer",
+                "Weaponsmith",
+                "Scribe",
+                "Huntsman",
+              ],
+              "id": 88772,
+              "min_rating": 400,
+              "output": 1,
+              "quantity": 2,
+              "recipe_id": 2,
+            },
+          ],
+          "disciplines": Array [
+            "Artificer",
+            "Weaponsmith",
+            "Scribe",
+            "Huntsman",
+          ],
+          "id": 88774,
+          "min_rating": 400,
+          "output": 1,
+          "quantity": 2,
+          "recipe_id": 2,
+        },
+        Object {
+          "components": Array [
+            Object {
+              "components": Array [
+                Object {
+                  "id": 88770,
+                  "quantity": 2,
+                },
+                Object {
+                  "id": 88773,
+                  "quantity": 2,
+                },
+              ],
+              "disciplines": Array [
+                "Artificer",
+                "Weaponsmith",
+                "Scribe",
+                "Huntsman",
+              ],
+              "id": 88772,
+              "min_rating": 400,
+              "output": 1,
+              "quantity": 2,
+              "recipe_id": 2,
+            },
+            Object {
+              "id": 88775,
+              "quantity": 1,
+            },
+          ],
+          "disciplines": Array [
+            "Scribe",
+          ],
+          "id": 88775,
+          "min_rating": 250,
+          "output": 1,
+          "quantity": 1,
+          "recipe_id": 900011,
+          "upgrade_id": 9001,
+        },
+      ],
+      "disciplines": Array [
+        "Artificer",
+        "Weaponsmith",
+        "Scribe",
+        "Huntsman",
+      ],
+      "id": 88773,
+      "min_rating": 400,
+      "output": 1,
+      "quantity": 2,
+      "recipe_id": 2,
+    },
+  ],
+  "disciplines": Array [
+    "Artificer",
+    "Weaponsmith",
+    "Scribe",
+    "Huntsman",
+  ],
+  "id": 88772,
+  "min_rating": 400,
+  "output": 1,
+  "quantity": 1,
+  "recipe_id": 2,
+}
+`;
+
+exports[`recipe-nesting doesnt thrown an error for self-referencing recipes 1`] = `
+Object {
+  "components": Array [
+    Object {
+      "id": 88771,
+      "quantity": 3,
+    },
+    Object {
+      "id": 88770,
+      "quantity": 2,
+    },
+  ],
+  "disciplines": Array [
+    "Artificer",
+    "Weaponsmith",
+    "Scribe",
+    "Huntsman",
+  ],
+  "id": 88771,
+  "min_rating": 400,
+  "output": 1,
+  "quantity": 1,
+  "recipe_id": 2,
+}
+`;
+
+exports[`recipe-nesting filters components 1`] = `
+Object {
+  "disciplines": Array [],
+  "id": 4567,
+  "min_rating": null,
+  "output": 1,
+  "quantity": 1,
+  "recipe_id": 69,
+}
+`;
+
+exports[`recipe-nesting orders the components correctly 1`] = `
+Object {
+  "components": Array [
+    Object {
+      "id": 24284,
+      "quantity": 3,
+    },
+    Object {
+      "components": Array [
+        Object {
+          "id": 19741,
+          "quantity": 2,
+        },
+      ],
+      "disciplines": Array [
+        "Leatherworker",
+        "Armorsmith",
+        "Tailor",
+        "Scribe",
+      ],
+      "id": 19742,
+      "min_rating": 150,
+      "output": 1,
+      "quantity": 1,
+      "recipe_id": 7,
+    },
+    Object {
+      "id": 24285,
+      "quantity": 3,
+    },
+    Object {
+      "id": 24286,
+      "quantity": 3,
+    },
+  ],
+  "disciplines": Array [
+    "Leatherworker",
+    "Armorsmith",
+    "Tailor",
+  ],
+  "id": 19814,
+  "min_rating": 175,
+  "output": 1,
+  "quantity": 1,
+  "recipe_id": 69,
+}
+`;
+
+exports[`recipe-nesting works for recipes with same sub-components 1`] = `
+Object {
+  "components": Array [
+    Object {
+      "components": Array [
+        Object {
+          "id": 99995,
+          "quantity": 2,
+        },
+      ],
+      "disciplines": Array [
+        "Artificer",
+        "Weaponsmith",
+        "Scribe",
+        "Huntsman",
+      ],
+      "id": 99994,
+      "min_rating": 400,
+      "output": 1,
+      "quantity": 1,
+      "recipe_id": 12421412312,
+    },
+    Object {
+      "components": Array [
+        Object {
+          "components": Array [
+            Object {
+              "id": 99995,
+              "quantity": 2,
+            },
+          ],
+          "disciplines": Array [
+            "Artificer",
+            "Weaponsmith",
+            "Scribe",
+            "Huntsman",
+          ],
+          "id": 99994,
+          "min_rating": 400,
+          "output": 1,
+          "quantity": 2,
+          "recipe_id": 12421412312,
+        },
+      ],
+      "disciplines": Array [
+        "Artificer",
+        "Weaponsmith",
+        "Scribe",
+        "Huntsman",
+      ],
+      "id": 99991,
+      "min_rating": 400,
+      "output": 1,
+      "quantity": 2,
+      "recipe_id": 987654645,
+    },
+    Object {
+      "components": Array [
+        Object {
+          "components": Array [
+            Object {
+              "id": 99995,
+              "quantity": 2,
+            },
+          ],
+          "disciplines": Array [
+            "Artificer",
+            "Weaponsmith",
+            "Scribe",
+            "Huntsman",
+          ],
+          "id": 99994,
+          "min_rating": 400,
+          "output": 1,
+          "quantity": 2,
+          "recipe_id": 12421412312,
+        },
+      ],
+      "disciplines": Array [
+        "Artificer",
+        "Weaponsmith",
+        "Scribe",
+        "Huntsman",
+      ],
+      "id": 99992,
+      "min_rating": 400,
+      "output": 1,
+      "quantity": 2,
+      "recipe_id": 767567,
+    },
+    Object {
+      "components": Array [
+        Object {
+          "components": Array [
+            Object {
+              "id": 99995,
+              "quantity": 2,
+            },
+          ],
+          "disciplines": Array [
+            "Artificer",
+            "Weaponsmith",
+            "Scribe",
+            "Huntsman",
+          ],
+          "id": 99994,
+          "min_rating": 400,
+          "output": 1,
+          "quantity": 2,
+          "recipe_id": 12421412312,
+        },
+      ],
+      "disciplines": Array [
+        "Artificer",
+        "Weaponsmith",
+        "Scribe",
+        "Huntsman",
+      ],
+      "id": 99993,
+      "min_rating": 400,
+      "output": 1,
+      "quantity": 2,
+      "recipe_id": 2344356,
+    },
+  ],
+  "disciplines": Array [
+    "Artificer",
+    "Weaponsmith",
+    "Scribe",
+    "Huntsman",
+  ],
+  "id": 99990,
+  "min_rating": 400,
+  "output": 1,
+  "quantity": 1,
+  "recipe_id": 1293083123,
+}
+`;

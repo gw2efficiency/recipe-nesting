@@ -298,201 +298,28 @@ describe('recipe-nesting', () => {
   const output = nestRecipes(input)
 
   it('can build a one-layer recipe', () => {
-    const expected = {
-      id: 19712,
-      quantity: 1,
-      output: 1,
-      output_range: '1-10',
-      achievement_id: 12,
-      min_rating: 400,
-      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-      components: [{ id: 19725, quantity: 3 }],
-      recipe_id: 2,
-    }
-
-    expect(output.find((x) => x.id === 19712)).toEqual(expected)
+    expect(output.find((x) => x.id === 19712)).toMatchSnapshot()
   })
 
   it('can build a one-layer recipe with output > 1', () => {
-    const expected = {
-      id: 19112,
-      quantity: 1,
-      output: 5,
-      min_rating: 400,
-      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-      components: [{ id: 19725, quantity: 3 }],
-      recipe_id: 2,
-    }
-
-    expect(output.find((x) => x.id === 19112)).toEqual(expected)
+    expect(output.find((x) => x.id === 19112)).toMatchSnapshot()
   })
 
   it('can build a two-layer recipe', () => {
-    const expected = {
-      id: 12988,
-      quantity: 1,
-      output: 1,
-      min_rating: 400,
-      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-      components: [
-        {
-          id: 19712,
-          quantity: 2,
-          output: 1,
-          output_range: '1-10',
-          achievement_id: 12,
-          min_rating: 400,
-          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          components: [{ id: 19725, quantity: 3 }],
-          recipe_id: 2,
-        },
-        {
-          id: 19685,
-          quantity: 3,
-          output: 1,
-          min_rating: 400,
-          disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman', 'Jeweler'],
-          components: [{ id: 19701, quantity: 2 }],
-          recipe_id: 21,
-        },
-      ],
-      recipe_id: 39,
-    }
-
-    expect(output.find((x) => x.id === 12988)).toEqual(expected)
+    expect(output.find((x) => x.id === 12988)).toMatchSnapshot()
   })
 
   it('can build a two-layer recipe with output > 1', () => {
-    const expectedLeaf = {
-      id: 12990,
-      quantity: 1,
-      output: 1,
-      min_rating: 50,
-      disciplines: ['Artificer', 'Weaponsmith', 'Huntsman'],
-      components: [
-        {
-          id: 19710,
-          quantity: 2,
-          output: 1,
-          min_rating: 0,
-          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          components: [{ id: 19723, quantity: 3 }],
-          recipe_id: 3,
-        },
-        {
-          id: 19679,
-          quantity: 3,
-          output: 5,
-          min_rating: 0,
-          disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          components: [
-            { id: 19697, quantity: 10 },
-            { id: 19704, quantity: 1 },
-          ],
-          recipe_id: 16,
-        },
-      ],
-      recipe_id: 30,
-    }
-    const expectedRoot = {
-      id: 19679,
-      quantity: 1,
-      output: 5,
-      min_rating: 0,
-      disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-      components: [
-        { id: 19697, quantity: 10 },
-        { id: 19704, quantity: 1 },
-      ],
-      recipe_id: 16,
-    }
-
-    expect(output.find((x) => x.id === 12990)).toEqual(expectedLeaf)
-    expect(output.find((x) => x.id === 19679)).toEqual(expectedRoot)
+    expect(output.find((x) => x.id === 12990)).toMatchSnapshot()
+    expect(output.find((x) => x.id === 19679)).toMatchSnapshot()
   })
 
   it('orders the components correctly', () => {
-    const expected = {
-      id: 19814,
-      quantity: 1,
-      output: 1,
-      min_rating: 175,
-      disciplines: ['Leatherworker', 'Armorsmith', 'Tailor'],
-      components: [
-        {
-          id: 24284,
-          quantity: 3,
-        },
-        {
-          id: 19742,
-          quantity: 1,
-          output: 1,
-          min_rating: 150,
-          disciplines: ['Leatherworker', 'Armorsmith', 'Tailor', 'Scribe'],
-          components: [{ id: 19741, quantity: 2 }],
-          recipe_id: 7,
-        },
-        {
-          id: 24285,
-          quantity: 3,
-        },
-        {
-          id: 24286,
-          quantity: 3,
-        },
-      ],
-      recipe_id: 69,
-    }
-
-    expect(output.find((x) => x.id === 19814)).toEqual(expected)
+    expect(output.find((x) => x.id === 19814)).toMatchSnapshot()
   })
 
   it('can include guild item ingredients', () => {
-    const expected = {
-      id: 1234,
-      quantity: 1,
-      output: 1,
-      min_rating: 175,
-      disciplines: ['Leatherworker', 'Armorsmith', 'Tailor'],
-      components: [
-        {
-          id: 1337,
-          quantity: 1,
-        },
-        {
-          id: 77749,
-          output: 1,
-          quantity: 7,
-          upgrade_id: 696,
-          min_rating: 250,
-          disciplines: ['Scribe'],
-          components: [
-            {
-              id: 19679,
-              output: 5,
-              quantity: 3,
-              min_rating: 0,
-              disciplines: ['Armorsmith', 'Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-              components: [
-                {
-                  id: 19697,
-                  quantity: 10,
-                },
-                {
-                  id: 19704,
-                  quantity: 1,
-                },
-              ],
-              recipe_id: 16,
-            },
-          ],
-          recipe_id: 11756,
-        },
-      ],
-      recipe_id: 69,
-    }
-
-    expect(output.find((x) => x.id === 1234)).toEqual(expected)
+    expect(output.find((x) => x.id === 1234)).toMatchSnapshot()
   })
 
   it('can include guild item decorations', () => {
@@ -524,236 +351,23 @@ describe('recipe-nesting', () => {
     const decorations = { 42: 1337 }
     const output = nestRecipes(input, decorations)
 
-    const expected = [
-      {
-        id: 1001,
-        output: 1,
-        min_rating: 400,
-        disciplines: ['Scribe'],
-        quantity: 1,
-        components: [
-          {
-            id: 1002,
-            output: 1,
-            components: [
-              { id: 2, quantity: 2 },
-              { id: 1337, quantity: 1 },
-            ],
-            min_rating: 400,
-            disciplines: ['Scribe'],
-            quantity: 2,
-            recipe_id: 1,
-          },
-        ],
-        recipe_id: 2,
-      },
-      {
-        id: 1002,
-        output: 1,
-        min_rating: 400,
-        disciplines: ['Scribe'],
-        quantity: 1,
-        components: [
-          { id: 2, quantity: 2 },
-          { id: 1337, quantity: 1 },
-        ],
-        recipe_id: 1,
-      },
-    ]
-
-    expect(output).toEqual(expected)
+    expect(output).toMatchSnapshot()
   })
 
   it('filters components', () => {
-    const expected = {
-      id: 4567,
-      quantity: 1,
-      output: 1,
-      min_rating: null,
-      disciplines: [],
-      recipe_id: 69,
-    }
-
-    expect(output.find((x) => x.id === 4567)).toEqual(expected)
+    expect(output.find((x) => x.id === 4567)).toMatchSnapshot()
   })
 
   it('doesnt thrown an error for self-referencing recipes', () => {
-    const expected = {
-      id: 88771,
-      quantity: 1,
-      output: 1,
-      min_rating: 400,
-      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-      components: [
-        {
-          id: 88771,
-          quantity: 3,
-        },
-        {
-          id: 88770,
-          quantity: 2,
-        },
-      ],
-      recipe_id: 2,
-    }
-
-    expect(output.find((x) => x.id === 88771)).toEqual(expected)
+    expect(output.find((x) => x.id === 88771)).toMatchSnapshot()
   })
 
   it('doesnt thrown an error for recursive recipes', () => {
-    const expected = {
-      id: 88772,
-      output: 1,
-      min_rating: 400,
-      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-      quantity: 1,
-      components: [
-        { id: 88770, quantity: 2 },
-        {
-          id: 88773,
-          output: 1,
-          min_rating: 400,
-          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          quantity: 2,
-          components: [
-            {
-              id: 88774,
-              output: 1,
-              min_rating: 400,
-              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-              quantity: 2,
-              components: [
-                {
-                  id: 88772,
-                  output: 1,
-                  components: [
-                    { id: 88770, quantity: 2 },
-                    { id: 88773, quantity: 2 },
-                  ],
-                  min_rating: 400,
-                  disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-                  quantity: 2,
-                  recipe_id: 2,
-                },
-              ],
-              recipe_id: 2,
-            },
-            {
-              id: 88775,
-              output: 1,
-              min_rating: 250,
-              disciplines: ['Scribe'],
-              upgrade_id: 9001,
-              quantity: 1,
-              components: [
-                {
-                  id: 88772,
-                  output: 1,
-                  min_rating: 400,
-                  disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-                  quantity: 2,
-                  components: [
-                    { id: 88770, quantity: 2 },
-                    { id: 88773, quantity: 2 },
-                  ],
-                  recipe_id: 2,
-                },
-                {
-                  id: 88775,
-                  quantity: 1,
-                },
-              ],
-              recipe_id: 900011,
-            },
-          ],
-          recipe_id: 2,
-        },
-      ],
-      recipe_id: 2,
-    }
-
-    expect(output.find((x) => x.id === 88772)).toEqual(expected)
+    expect(output.find((x) => x.id === 88772)).toMatchSnapshot()
   })
 
   it('works for recipes with same sub-components', () => {
-    const expected = {
-      id: 99990,
-      output: 1,
-      min_rating: 400,
-      disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-      quantity: 1,
-      components: [
-        {
-          id: 99994,
-          output: 1,
-          min_rating: 400,
-          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          quantity: 1,
-          components: [{ id: 99995, quantity: 2 }],
-          recipe_id: 12421412312,
-        },
-        {
-          id: 99991,
-          output: 1,
-          min_rating: 400,
-          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          quantity: 2,
-          components: [
-            {
-              id: 99994,
-              output: 1,
-              min_rating: 400,
-              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-              quantity: 2,
-              components: [{ id: 99995, quantity: 2 }],
-              recipe_id: 12421412312,
-            },
-          ],
-          recipe_id: 987654645,
-        },
-        {
-          id: 99992,
-          output: 1,
-          min_rating: 400,
-          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          quantity: 2,
-          components: [
-            {
-              id: 99994,
-              output: 1,
-              min_rating: 400,
-              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-              quantity: 2,
-              components: [{ id: 99995, quantity: 2 }],
-              recipe_id: 12421412312,
-            },
-          ],
-          recipe_id: 767567,
-        },
-        {
-          id: 99993,
-          output: 1,
-          min_rating: 400,
-          disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-          quantity: 2,
-          components: [
-            {
-              id: 99994,
-              output: 1,
-              min_rating: 400,
-              disciplines: ['Artificer', 'Weaponsmith', 'Scribe', 'Huntsman'],
-              quantity: 2,
-              components: [{ id: 99995, quantity: 2 }],
-              recipe_id: 12421412312,
-            },
-          ],
-          recipe_id: 2344356,
-        },
-      ],
-      recipe_id: 1293083123,
-    }
-
-    expect(output.find((x) => x.id === 99990)).toEqual(expected)
+    expect(output.find((x) => x.id === 99990)).toMatchSnapshot()
   })
 
   it('ignores recipes for vendor items', () => {
