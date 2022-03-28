@@ -23,11 +23,13 @@ Object {
   "quantity": 1,
   "recipe_id": 2,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;
 
 exports[`recipe-nesting can build a one-layer recipe with output > 1 1`] = `
 Object {
+  "achievement_id": undefined,
   "components": Array [
     Object {
       "id": 19725,
@@ -44,14 +46,17 @@ Object {
   "id": 19112,
   "min_rating": 400,
   "output": 5,
+  "output_range": undefined,
   "quantity": 1,
   "recipe_id": 2,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;
 
 exports[`recipe-nesting can build a two-layer recipe 1`] = `
 Object {
+  "achievement_id": undefined,
   "components": Array [
     Object {
       "achievement_id": 12,
@@ -75,8 +80,10 @@ Object {
       "quantity": 2,
       "recipe_id": 2,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
           "id": 19701,
@@ -95,9 +102,11 @@ Object {
       "id": 19685,
       "min_rating": 400,
       "output": 1,
+      "output_range": undefined,
       "quantity": 3,
       "recipe_id": 21,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
     Object {
       "id": 1,
@@ -114,16 +123,20 @@ Object {
   "id": 12988,
   "min_rating": 400,
   "output": 1,
+  "output_range": undefined,
   "quantity": 1,
   "recipe_id": 39,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;
 
 exports[`recipe-nesting can build a two-layer recipe with output > 1 1`] = `
 Object {
+  "achievement_id": undefined,
   "components": Array [
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
           "id": 19723,
@@ -140,11 +153,14 @@ Object {
       "id": 19710,
       "min_rating": 0,
       "output": 1,
+      "output_range": undefined,
       "quantity": 2,
       "recipe_id": 3,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
           "id": 19697,
@@ -167,9 +183,11 @@ Object {
       "id": 19679,
       "min_rating": 0,
       "output": 5,
+      "output_range": undefined,
       "quantity": 3,
       "recipe_id": 16,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
   ],
   "disciplines": Array [
@@ -180,14 +198,17 @@ Object {
   "id": 12990,
   "min_rating": 50,
   "output": 1,
+  "output_range": undefined,
   "quantity": 1,
   "recipe_id": 30,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;
 
 exports[`recipe-nesting can build a two-layer recipe with output > 1 2`] = `
 Object {
+  "achievement_id": undefined,
   "components": Array [
     Object {
       "id": 19697,
@@ -210,17 +231,21 @@ Object {
   "id": 19679,
   "min_rating": 0,
   "output": 5,
+  "output_range": undefined,
   "quantity": 1,
   "recipe_id": 16,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;
 
 exports[`recipe-nesting can include guild item decorations 1`] = `
 Array [
   Object {
+    "achievement_id": undefined,
     "components": Array [
       Object {
+        "achievement_id": undefined,
         "components": Array [
           Object {
             "id": 2,
@@ -239,9 +264,11 @@ Array [
         "id": 1002,
         "min_rating": 400,
         "output": 1,
+        "output_range": undefined,
         "quantity": 2,
         "recipe_id": 1,
         "type": "Recipe",
+        "upgrade_id": undefined,
       },
     ],
     "disciplines": Array [
@@ -250,11 +277,14 @@ Array [
     "id": 1001,
     "min_rating": 400,
     "output": 1,
+    "output_range": undefined,
     "quantity": 1,
     "recipe_id": 2,
     "type": "Recipe",
+    "upgrade_id": undefined,
   },
   Object {
+    "achievement_id": undefined,
     "components": Array [
       Object {
         "id": 2,
@@ -273,15 +303,18 @@ Array [
     "id": 1002,
     "min_rating": 400,
     "output": 1,
+    "output_range": undefined,
     "quantity": 1,
     "recipe_id": 1,
     "type": "Recipe",
+    "upgrade_id": undefined,
   },
 ]
 `;
 
 exports[`recipe-nesting can include guild item ingredients 1`] = `
 Object {
+  "achievement_id": undefined,
   "components": Array [
     Object {
       "id": 1337,
@@ -289,8 +322,10 @@ Object {
       "type": "Item",
     },
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
+          "achievement_id": undefined,
           "components": Array [
             Object {
               "id": 19697,
@@ -313,9 +348,11 @@ Object {
           "id": 19679,
           "min_rating": 0,
           "output": 5,
+          "output_range": undefined,
           "quantity": 3,
           "recipe_id": 16,
           "type": "Recipe",
+          "upgrade_id": undefined,
         },
       ],
       "disciplines": Array [
@@ -324,6 +361,7 @@ Object {
       "id": 77749,
       "min_rating": 250,
       "output": 1,
+      "output_range": undefined,
       "quantity": 7,
       "recipe_id": 11756,
       "type": "Recipe",
@@ -338,14 +376,17 @@ Object {
   "id": 1234,
   "min_rating": 175,
   "output": 1,
+  "output_range": undefined,
   "quantity": 1,
   "recipe_id": 69,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;
 
 exports[`recipe-nesting doesnt thrown an error for recursive recipes 1`] = `
 Object {
+  "achievement_id": undefined,
   "components": Array [
     Object {
       "id": 88770,
@@ -353,10 +394,13 @@ Object {
       "type": "Item",
     },
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
+          "achievement_id": undefined,
           "components": Array [
             Object {
+              "achievement_id": undefined,
               "components": Array [
                 Object {
                   "id": 88770,
@@ -378,9 +422,11 @@ Object {
               "id": 88772,
               "min_rating": 400,
               "output": 1,
+              "output_range": undefined,
               "quantity": 2,
               "recipe_id": 2,
               "type": "Recipe",
+              "upgrade_id": undefined,
             },
           ],
           "disciplines": Array [
@@ -392,13 +438,17 @@ Object {
           "id": 88774,
           "min_rating": 400,
           "output": 1,
+          "output_range": undefined,
           "quantity": 2,
           "recipe_id": 2,
           "type": "Recipe",
+          "upgrade_id": undefined,
         },
         Object {
+          "achievement_id": undefined,
           "components": Array [
             Object {
+              "achievement_id": undefined,
               "components": Array [
                 Object {
                   "id": 88770,
@@ -420,9 +470,11 @@ Object {
               "id": 88772,
               "min_rating": 400,
               "output": 1,
+              "output_range": undefined,
               "quantity": 2,
               "recipe_id": 2,
               "type": "Recipe",
+              "upgrade_id": undefined,
             },
             Object {
               "id": 88775,
@@ -436,6 +488,7 @@ Object {
           "id": 88775,
           "min_rating": 250,
           "output": 1,
+          "output_range": undefined,
           "quantity": 1,
           "recipe_id": 900011,
           "type": "Recipe",
@@ -451,9 +504,11 @@ Object {
       "id": 88773,
       "min_rating": 400,
       "output": 1,
+      "output_range": undefined,
       "quantity": 2,
       "recipe_id": 2,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
   ],
   "disciplines": Array [
@@ -465,14 +520,17 @@ Object {
   "id": 88772,
   "min_rating": 400,
   "output": 1,
+  "output_range": undefined,
   "quantity": 1,
   "recipe_id": 2,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;
 
 exports[`recipe-nesting doesnt thrown an error for self-referencing recipes 1`] = `
 Object {
+  "achievement_id": undefined,
   "components": Array [
     Object {
       "id": 88771,
@@ -494,14 +552,17 @@ Object {
   "id": 88771,
   "min_rating": 400,
   "output": 1,
+  "output_range": undefined,
   "quantity": 1,
   "recipe_id": 2,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;
 
 exports[`recipe-nesting orders the components correctly 1`] = `
 Object {
+  "achievement_id": undefined,
   "components": Array [
     Object {
       "id": 24284,
@@ -509,6 +570,7 @@ Object {
       "type": "Item",
     },
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
           "id": 19741,
@@ -525,9 +587,11 @@ Object {
       "id": 19742,
       "min_rating": 150,
       "output": 1,
+      "output_range": undefined,
       "quantity": 1,
       "recipe_id": 7,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
     Object {
       "id": 24285,
@@ -548,16 +612,20 @@ Object {
   "id": 19814,
   "min_rating": 175,
   "output": 1,
+  "output_range": undefined,
   "quantity": 1,
   "recipe_id": 69,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;
 
 exports[`recipe-nesting works for recipes with same sub-components 1`] = `
 Object {
+  "achievement_id": undefined,
   "components": Array [
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
           "id": 99995,
@@ -574,13 +642,17 @@ Object {
       "id": 99994,
       "min_rating": 400,
       "output": 1,
+      "output_range": undefined,
       "quantity": 1,
       "recipe_id": 12421412312,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
+          "achievement_id": undefined,
           "components": Array [
             Object {
               "id": 99995,
@@ -597,9 +669,11 @@ Object {
           "id": 99994,
           "min_rating": 400,
           "output": 1,
+          "output_range": undefined,
           "quantity": 2,
           "recipe_id": 12421412312,
           "type": "Recipe",
+          "upgrade_id": undefined,
         },
       ],
       "disciplines": Array [
@@ -611,13 +685,17 @@ Object {
       "id": 99991,
       "min_rating": 400,
       "output": 1,
+      "output_range": undefined,
       "quantity": 2,
       "recipe_id": 987654645,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
+          "achievement_id": undefined,
           "components": Array [
             Object {
               "id": 99995,
@@ -634,9 +712,11 @@ Object {
           "id": 99994,
           "min_rating": 400,
           "output": 1,
+          "output_range": undefined,
           "quantity": 2,
           "recipe_id": 12421412312,
           "type": "Recipe",
+          "upgrade_id": undefined,
         },
       ],
       "disciplines": Array [
@@ -648,13 +728,17 @@ Object {
       "id": 99992,
       "min_rating": 400,
       "output": 1,
+      "output_range": undefined,
       "quantity": 2,
       "recipe_id": 767567,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
     Object {
+      "achievement_id": undefined,
       "components": Array [
         Object {
+          "achievement_id": undefined,
           "components": Array [
             Object {
               "id": 99995,
@@ -671,9 +755,11 @@ Object {
           "id": 99994,
           "min_rating": 400,
           "output": 1,
+          "output_range": undefined,
           "quantity": 2,
           "recipe_id": 12421412312,
           "type": "Recipe",
+          "upgrade_id": undefined,
         },
       ],
       "disciplines": Array [
@@ -685,9 +771,11 @@ Object {
       "id": 99993,
       "min_rating": 400,
       "output": 1,
+      "output_range": undefined,
       "quantity": 2,
       "recipe_id": 2344356,
       "type": "Recipe",
+      "upgrade_id": undefined,
     },
   ],
   "disciplines": Array [
@@ -699,8 +787,10 @@ Object {
   "id": 99990,
   "min_rating": 400,
   "output": 1,
+  "output_range": undefined,
   "quantity": 1,
   "recipe_id": 1293083123,
   "type": "Recipe",
+  "upgrade_id": undefined,
 }
 `;

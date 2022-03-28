@@ -1,8 +1,8 @@
 import { nestRecipes } from '../src/index'
-import { Recipe } from '../src/types'
+import { API_Recipes_Entry } from '../src/api'
 
 describe('recipe-nesting', () => {
-  const input: Array<Recipe> = [
+  const input: Array<API_Recipes_Entry> = [
     {
       type: 'Refinement',
       output_item_id: 19712,
@@ -327,7 +327,7 @@ describe('recipe-nesting', () => {
   })
 
   it('can include guild item decorations', () => {
-    const input: Array<Recipe> = [
+    const input: Array<API_Recipes_Entry> = [
       {
         type: 'Refinement',
         output_item_id: 1001,

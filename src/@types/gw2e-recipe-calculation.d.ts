@@ -7,8 +7,6 @@ declare module 'gw2e-recipe-calculation' {
   }
 
   export const staticItems: {
-    dailyCooldowns: Array<number>
-    buyableDailyCooldowns: Array<number>
-    vendorItems: Record<number, VendorItem>
+    vendorItems: Record<string, VendorItem>
   }
 }

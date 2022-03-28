@@ -1,4 +1,5 @@
-export interface Recipe {
+// TODO Extract to shared type library
+export interface API_Recipes_Entry {
   type: string
   output_item_id: number
   output_upgrade_id?: number
@@ -16,5 +17,3 @@ export interface Recipe {
   id: number
   chat_link: string
 }
-
-export type DecorationsToItemsMap = Record<number, number>
