@@ -335,6 +335,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@gw2efficiency/recipe-calculation@^3.0.1-alpha.0":
+  version "3.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@gw2efficiency/recipe-calculation/-/recipe-calculation-3.0.1-alpha.0.tgz#c9f58bfb91611a148a5f0fffa84fe414337f424f"
+  integrity sha512-Iqk7gAFn+jHDbNpIYROPOWOv9akuvOaqRVbJb0fc93ZVEU2weTCJM0xNMw8FcxcORzVv0csZfnCmJsKWAKHREw==
+
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
@@ -1722,11 +1727,6 @@ graceful-fs@^4.2.9:
   version "4.2.9"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.9.tgz#041b05df45755e587a24942279b9d113146e1c96"
   integrity sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==
-
-gw2e-recipe-calculation@^2.0.0:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/gw2e-recipe-calculation/-/gw2e-recipe-calculation-2.1.3.tgz#abadaa49241a4e0bc782c3c829b2c19e272d0ec8"
-  integrity sha512-DuulTm76HQ9zCeH6iGCHiI7tbUiyb0+fKCO8rFvdTrWcfGRFGaCk60sqxVNQ+hKFSzo7LZ13+FSh8FAyBNwGFg==
 
 has-bigints@^1.0.1:
   version "1.0.1"

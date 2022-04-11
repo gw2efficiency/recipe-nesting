@@ -1,5 +1,5 @@
 import { omit, compact, toMap } from '@devoxa/flocky'
-import { staticItems } from 'gw2e-recipe-calculation'
+import { staticItems } from '@gw2efficiency/recipe-calculation'
 import { API_Recipes_Entry } from './api'
 
 // TODO Remove this and do this step on the consumer side (i.e. the backend) instead
