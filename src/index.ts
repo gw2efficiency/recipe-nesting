@@ -110,9 +110,13 @@ function nestRecipe(
     const id = isGuildUpgrade ? recipeUpgradesMap[component.id] || component.id : component.id
     const componentRecipe = recipesMap[id]
 
+    // Just give back the component for currencies
+    if (component.type === 'Currency') {
+      return component
+    }
+
     if (!componentRecipe) {
-      // We could not find a recipe for a normal component, so
-      // we just give it back (e.g. basic woods or currencies)
+      // We could not find a recipe for a normal component, so we just give it back (e.g. basic woods)
       if (!isGuildUpgrade) {
         return component
       }

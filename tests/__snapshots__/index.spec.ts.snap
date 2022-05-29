@@ -113,6 +113,11 @@ Object {
       "quantity": 10000,
       "type": "Currency",
     },
+    Object {
+      "id": 19685,
+      "quantity": 1,
+      "type": "Currency",
+    },
   ],
   "disciplines": Array [
     "Artificer",

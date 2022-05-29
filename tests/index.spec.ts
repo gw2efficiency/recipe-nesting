@@ -49,6 +49,7 @@ describe('recipe-nesting', () => {
         { id: 19712, type: 'Item', count: 2 },
         { id: 19685, type: 'Item', count: 3 },
         { id: 1, type: 'Currency', count: 1_00_00 },
+        { id: 19685, type: 'Currency', count: 1 },
       ],
       id: 39,
       chat_link: '[&CScAAAA=]',
