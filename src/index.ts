@@ -1,9 +1,5 @@
 import { omit, compact, toMap } from '@devoxa/flocky'
-import { staticItems } from '@gw2efficiency/recipe-calculation'
 import { API_Recipes_Entry } from './api'
-
-// TODO Remove this and do this step on the consumer side (i.e. the backend) instead
-const VENDOR_ITEM_IDS = Object.keys(staticItems.vendorItems).map((id) => parseInt(id, 10))
 
 export type BasicItemComponent = { id: number; type: 'Item'; quantity: number }
 export type BasicCurrencyComponent = { id: number; type: 'Currency'; quantity: number }
@@ -40,12 +36,7 @@ export function nestRecipes(
   apiRecipes: Array<API_Recipes_Entry>,
   decorationMap: Record<string, number> = {}
 ): Array<NestedRecipe> {
-  let recipes = apiRecipes.map(transformRecipe)
-
-  // Ignore recipes that result in items that can be bought from vendors
-  // This removes issues with wrong quantities in resulting recipes and
-  // the wrong items (= container items) showing up in the shopping list
-  recipes = recipes.filter((recipe) => VENDOR_ITEM_IDS.indexOf(recipe.id) === -1)
+  const recipes = apiRecipes.map(transformRecipe)
 
   // Transform the arrays into a id maps to eliminate "find" calls, which can be very
   // slow if called on a big array (since they have to be called on every nesting)

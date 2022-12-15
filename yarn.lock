@@ -335,11 +335,6 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@gw2efficiency/recipe-calculation@^3.0.1-alpha.1":
-  version "3.0.1-alpha.1"
-  resolved "https://registry.yarnpkg.com/@gw2efficiency/recipe-calculation/-/recipe-calculation-3.0.1-alpha.1.tgz#1d399514c63a915bf5bf1c7a70d5d3b9e8ff7099"
-  integrity sha512-QEebxotz8iVN+dNTDMK3D2HMI+NJf3nKHpOjXn2wHsNJGkNzoMecQckDCu4bWWqxR1y9qKJHT7MfOk1eJlj5+A==
-
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"

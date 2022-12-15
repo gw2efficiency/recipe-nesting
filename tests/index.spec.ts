@@ -376,8 +376,4 @@ describe('recipe-nesting', () => {
   it('ignores recipes with only guild upgrades', () => {
     expect(output.find((x) => x.id === 4567)).toEqual(undefined)
   })
-
-  it('ignores recipes for vendor items', () => {
-    expect(output.find((x) => x.id === 12235)).toEqual(undefined)
-  })
 })
