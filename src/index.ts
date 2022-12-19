@@ -20,6 +20,7 @@ interface TransformedRecipe {
   upgrade_id?: number
   output_range?: string
   achievement_id?: number
+  merchant?: { name: string; locations: Array<string> }
 }
 
 interface TransformedRecipeInternal extends TransformedRecipe {
@@ -77,6 +78,7 @@ function transformRecipe(recipe: API_Recipes_Entry): TransformedRecipeInternal {
     upgrade_id: recipe.output_upgrade_id,
     output_range: recipe.output_item_count_range,
     achievement_id: recipe.achievement_id,
+    merchant: recipe.merchant,
   }
 }
 

@@ -5,6 +5,7 @@ export interface API_Recipes_Entry {
   output_upgrade_id?: number
   output_item_count_range?: string
   achievement_id?: number
+  merchant?: { name: string; locations: Array<string> }
   output_item_count: number
   min_rating?: number
   disciplines: Array<string>
