@@ -21,8 +21,13 @@ Object {
   "min_rating": 400,
   "output": 1,
   "output_range": "1-10",
+  "prerequisites": Array [
+    Object {
+      "id": 2,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 2,
   "type": "Recipe",
   "upgrade_id": undefined,
 }
@@ -49,8 +54,13 @@ Object {
   "min_rating": 400,
   "output": 5,
   "output_range": undefined,
+  "prerequisites": Array [
+    Object {
+      "id": 2,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 2,
   "type": "Recipe",
   "upgrade_id": undefined,
 }
@@ -80,8 +90,13 @@ Object {
       "min_rating": 400,
       "output": 1,
       "output_range": "1-10",
+      "prerequisites": Array [
+        Object {
+          "id": 2,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 2,
-      "recipe_id": 2,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -107,8 +122,13 @@ Object {
       "min_rating": 400,
       "output": 1,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 21,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 3,
-      "recipe_id": 21,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -134,8 +154,13 @@ Object {
   "min_rating": 400,
   "output": 1,
   "output_range": undefined,
+  "prerequisites": Array [
+    Object {
+      "id": 39,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 39,
   "type": "Recipe",
   "upgrade_id": undefined,
 }
@@ -165,8 +190,13 @@ Object {
       "min_rating": 0,
       "output": 1,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 3,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 2,
-      "recipe_id": 3,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -196,8 +226,13 @@ Object {
       "min_rating": 0,
       "output": 5,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 16,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 3,
-      "recipe_id": 16,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -212,8 +247,13 @@ Object {
   "min_rating": 50,
   "output": 1,
   "output_range": undefined,
+  "prerequisites": Array [
+    Object {
+      "id": 30,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 30,
   "type": "Recipe",
   "upgrade_id": undefined,
 }
@@ -246,8 +286,13 @@ Object {
   "min_rating": 0,
   "output": 5,
   "output_range": undefined,
+  "prerequisites": Array [
+    Object {
+      "id": 16,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 16,
   "type": "Recipe",
   "upgrade_id": undefined,
 }
@@ -280,8 +325,13 @@ Array [
         "min_rating": 400,
         "output": 1,
         "output_range": undefined,
+        "prerequisites": Array [
+          Object {
+            "id": 1,
+            "type": "Recipe",
+          },
+        ],
         "quantity": 2,
-        "recipe_id": 1,
         "type": "Recipe",
         "upgrade_id": undefined,
       },
@@ -294,8 +344,13 @@ Array [
     "min_rating": 400,
     "output": 1,
     "output_range": undefined,
+    "prerequisites": Array [
+      Object {
+        "id": 2,
+        "type": "Recipe",
+      },
+    ],
     "quantity": 1,
-    "recipe_id": 2,
     "type": "Recipe",
     "upgrade_id": undefined,
   },
@@ -321,8 +376,13 @@ Array [
     "min_rating": 400,
     "output": 1,
     "output_range": undefined,
+    "prerequisites": Array [
+      Object {
+        "id": 1,
+        "type": "Recipe",
+      },
+    ],
     "quantity": 1,
-    "recipe_id": 1,
     "type": "Recipe",
     "upgrade_id": undefined,
   },
@@ -367,8 +427,13 @@ Object {
           "min_rating": 0,
           "output": 5,
           "output_range": undefined,
+          "prerequisites": Array [
+            Object {
+              "id": 16,
+              "type": "Recipe",
+            },
+          ],
           "quantity": 3,
-          "recipe_id": 16,
           "type": "Recipe",
           "upgrade_id": undefined,
         },
@@ -381,8 +446,13 @@ Object {
       "min_rating": 250,
       "output": 1,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 11756,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 7,
-      "recipe_id": 11756,
       "type": "Recipe",
       "upgrade_id": 696,
     },
@@ -397,8 +467,13 @@ Object {
   "min_rating": 175,
   "output": 1,
   "output_range": undefined,
+  "prerequisites": Array [
+    Object {
+      "id": 69,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 69,
   "type": "Recipe",
   "upgrade_id": undefined,
 }
@@ -444,8 +519,13 @@ Object {
               "min_rating": 400,
               "output": 1,
               "output_range": undefined,
+              "prerequisites": Array [
+                Object {
+                  "id": 2,
+                  "type": "Recipe",
+                },
+              ],
               "quantity": 2,
-              "recipe_id": 2,
               "type": "Recipe",
               "upgrade_id": undefined,
             },
@@ -461,8 +541,13 @@ Object {
           "min_rating": 400,
           "output": 1,
           "output_range": undefined,
+          "prerequisites": Array [
+            Object {
+              "id": 2,
+              "type": "Recipe",
+            },
+          ],
           "quantity": 2,
-          "recipe_id": 2,
           "type": "Recipe",
           "upgrade_id": undefined,
         },
@@ -494,8 +579,13 @@ Object {
               "min_rating": 400,
               "output": 1,
               "output_range": undefined,
+              "prerequisites": Array [
+                Object {
+                  "id": 2,
+                  "type": "Recipe",
+                },
+              ],
               "quantity": 2,
-              "recipe_id": 2,
               "type": "Recipe",
               "upgrade_id": undefined,
             },
@@ -513,8 +603,13 @@ Object {
           "min_rating": 250,
           "output": 1,
           "output_range": undefined,
+          "prerequisites": Array [
+            Object {
+              "id": 900011,
+              "type": "Recipe",
+            },
+          ],
           "quantity": 1,
-          "recipe_id": 900011,
           "type": "Recipe",
           "upgrade_id": 9001,
         },
@@ -530,8 +625,13 @@ Object {
       "min_rating": 400,
       "output": 1,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 2,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 2,
-      "recipe_id": 2,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -547,8 +647,13 @@ Object {
   "min_rating": 400,
   "output": 1,
   "output_range": undefined,
+  "prerequisites": Array [
+    Object {
+      "id": 2,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 2,
   "type": "Recipe",
   "upgrade_id": undefined,
 }
@@ -580,8 +685,13 @@ Object {
   "min_rating": 400,
   "output": 1,
   "output_range": undefined,
+  "prerequisites": Array [
+    Object {
+      "id": 2,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 2,
   "type": "Recipe",
   "upgrade_id": undefined,
 }
@@ -616,8 +726,13 @@ Object {
       "min_rating": 150,
       "output": 1,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 7,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 1,
-      "recipe_id": 7,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -642,8 +757,13 @@ Object {
   "min_rating": 175,
   "output": 1,
   "output_range": undefined,
+  "prerequisites": Array [
+    Object {
+      "id": 69,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 69,
   "type": "Recipe",
   "upgrade_id": undefined,
 }
@@ -673,8 +793,13 @@ Object {
       "min_rating": 400,
       "output": 1,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 12421412312,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 1,
-      "recipe_id": 12421412312,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -701,8 +826,13 @@ Object {
           "min_rating": 400,
           "output": 1,
           "output_range": undefined,
+          "prerequisites": Array [
+            Object {
+              "id": 12421412312,
+              "type": "Recipe",
+            },
+          ],
           "quantity": 2,
-          "recipe_id": 12421412312,
           "type": "Recipe",
           "upgrade_id": undefined,
         },
@@ -718,8 +848,13 @@ Object {
       "min_rating": 400,
       "output": 1,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 987654645,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 2,
-      "recipe_id": 987654645,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -746,8 +881,13 @@ Object {
           "min_rating": 400,
           "output": 1,
           "output_range": undefined,
+          "prerequisites": Array [
+            Object {
+              "id": 12421412312,
+              "type": "Recipe",
+            },
+          ],
           "quantity": 2,
-          "recipe_id": 12421412312,
           "type": "Recipe",
           "upgrade_id": undefined,
         },
@@ -763,8 +903,13 @@ Object {
       "min_rating": 400,
       "output": 1,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 767567,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 2,
-      "recipe_id": 767567,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -791,8 +936,13 @@ Object {
           "min_rating": 400,
           "output": 1,
           "output_range": undefined,
+          "prerequisites": Array [
+            Object {
+              "id": 12421412312,
+              "type": "Recipe",
+            },
+          ],
           "quantity": 2,
-          "recipe_id": 12421412312,
           "type": "Recipe",
           "upgrade_id": undefined,
         },
@@ -808,8 +958,13 @@ Object {
       "min_rating": 400,
       "output": 1,
       "output_range": undefined,
+      "prerequisites": Array [
+        Object {
+          "id": 2344356,
+          "type": "Recipe",
+        },
+      ],
       "quantity": 2,
-      "recipe_id": 2344356,
       "type": "Recipe",
       "upgrade_id": undefined,
     },
@@ -825,8 +980,13 @@ Object {
   "min_rating": 400,
   "output": 1,
   "output_range": undefined,
+  "prerequisites": Array [
+    Object {
+      "id": 1293083123,
+      "type": "Recipe",
+    },
+  ],
   "quantity": 1,
-  "recipe_id": 1293083123,
   "type": "Recipe",
   "upgrade_id": undefined,
 }

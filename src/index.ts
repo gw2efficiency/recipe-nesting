@@ -4,6 +4,7 @@ import { API_Recipes_Entry } from './api'
 export type BasicItemComponent = { id: number; type: 'Item'; quantity: number }
 export type BasicCurrencyComponent = { id: number; type: 'Currency'; quantity: number }
 export type BasicGuildUpgradeComponent = { id: number; type: 'GuildUpgrade'; quantity: number }
+export type Prerequisites = Array<{ type: 'Recipe'; id: number }>
 
 export interface NestedRecipe extends TransformedRecipe {
   components: Array<NestedRecipe | BasicItemComponent | BasicCurrencyComponent>
@@ -14,13 +15,13 @@ interface TransformedRecipe {
   type: 'Recipe'
   quantity: number
   output: number
-  recipe_id: number
   min_rating: number | null
   disciplines: Array<string>
   upgrade_id?: number
   output_range?: string
   achievement_id?: number
   merchant?: { name: string; locations: Array<string> }
+  prerequisites: Prerequisites
 }
 
 interface TransformedRecipeInternal extends TransformedRecipe {
@@ -72,7 +73,7 @@ function transformRecipe(recipe: API_Recipes_Entry): TransformedRecipeInternal {
     quantity: 1,
     output: recipe.output_item_count,
     components: components,
-    recipe_id: recipe.id,
+    prerequisites: recipe.id ? [{ type: 'Recipe', id: recipe.id }] : [],
     min_rating: recipe.min_rating !== undefined ? recipe.min_rating : null,
     disciplines: recipe.disciplines || [],
     upgrade_id: recipe.output_upgrade_id,
