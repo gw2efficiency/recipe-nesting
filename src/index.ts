@@ -81,7 +81,7 @@ function transformRecipe(recipe: API_Recipes_Entry_Next): TransformedRecipeInter
     output_range: recipe.output_item_count_range,
     achievement_id: recipe.achievement_id,
     merchant: recipe.merchant,
-    multipleRecipeCount: recipe.multipleRecipeCount
+    multipleRecipeCount: recipe.multipleRecipeCount,
   }
 }
 
