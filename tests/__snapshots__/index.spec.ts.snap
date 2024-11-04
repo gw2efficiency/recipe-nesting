@@ -19,6 +19,7 @@ Object {
   "id": 19712,
   "merchant": undefined,
   "min_rating": 400,
+  "multipleRecipeCount": 1,
   "output": 1,
   "output_range": "1-10",
   "prerequisites": Array [
@@ -52,6 +53,7 @@ Object {
   "id": 19112,
   "merchant": undefined,
   "min_rating": 400,
+  "multipleRecipeCount": 1,
   "output": 5,
   "output_range": undefined,
   "prerequisites": Array [
@@ -88,6 +90,7 @@ Object {
       "id": 19712,
       "merchant": undefined,
       "min_rating": 400,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": "1-10",
       "prerequisites": Array [
@@ -120,6 +123,7 @@ Object {
       "id": 19685,
       "merchant": undefined,
       "min_rating": 400,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": undefined,
       "prerequisites": Array [
@@ -152,6 +156,7 @@ Object {
   "id": 12988,
   "merchant": undefined,
   "min_rating": 400,
+  "multipleRecipeCount": 1,
   "output": 1,
   "output_range": undefined,
   "prerequisites": Array [
@@ -188,6 +193,7 @@ Object {
       "id": 19710,
       "merchant": undefined,
       "min_rating": 0,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": undefined,
       "prerequisites": Array [
@@ -224,6 +230,7 @@ Object {
       "id": 19679,
       "merchant": undefined,
       "min_rating": 0,
+      "multipleRecipeCount": 1,
       "output": 5,
       "output_range": undefined,
       "prerequisites": Array [
@@ -245,6 +252,7 @@ Object {
   "id": 12990,
   "merchant": undefined,
   "min_rating": 50,
+  "multipleRecipeCount": 1,
   "output": 1,
   "output_range": undefined,
   "prerequisites": Array [
@@ -284,6 +292,7 @@ Object {
   "id": 19679,
   "merchant": undefined,
   "min_rating": 0,
+  "multipleRecipeCount": 1,
   "output": 5,
   "output_range": undefined,
   "prerequisites": Array [
@@ -323,6 +332,7 @@ Array [
         "id": 1002,
         "merchant": undefined,
         "min_rating": 400,
+        "multipleRecipeCount": 1,
         "output": 1,
         "output_range": undefined,
         "prerequisites": Array [
@@ -342,6 +352,7 @@ Array [
     "id": 1001,
     "merchant": undefined,
     "min_rating": 400,
+    "multipleRecipeCount": 1,
     "output": 1,
     "output_range": undefined,
     "prerequisites": Array [
@@ -374,6 +385,7 @@ Array [
     "id": 1002,
     "merchant": undefined,
     "min_rating": 400,
+    "multipleRecipeCount": 1,
     "output": 1,
     "output_range": undefined,
     "prerequisites": Array [
@@ -425,6 +437,7 @@ Object {
           "id": 19679,
           "merchant": undefined,
           "min_rating": 0,
+          "multipleRecipeCount": 1,
           "output": 5,
           "output_range": undefined,
           "prerequisites": Array [
@@ -444,6 +457,7 @@ Object {
       "id": 77749,
       "merchant": undefined,
       "min_rating": 250,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": undefined,
       "prerequisites": Array [
@@ -465,6 +479,7 @@ Object {
   "id": 1234,
   "merchant": undefined,
   "min_rating": 175,
+  "multipleRecipeCount": 1,
   "output": 1,
   "output_range": undefined,
   "prerequisites": Array [
@@ -517,6 +532,7 @@ Object {
               "id": 88772,
               "merchant": undefined,
               "min_rating": 400,
+              "multipleRecipeCount": 1,
               "output": 1,
               "output_range": undefined,
               "prerequisites": Array [
@@ -539,6 +555,7 @@ Object {
           "id": 88774,
           "merchant": undefined,
           "min_rating": 400,
+          "multipleRecipeCount": 1,
           "output": 1,
           "output_range": undefined,
           "prerequisites": Array [
@@ -577,6 +594,7 @@ Object {
               "id": 88772,
               "merchant": undefined,
               "min_rating": 400,
+              "multipleRecipeCount": 1,
               "output": 1,
               "output_range": undefined,
               "prerequisites": Array [
@@ -601,6 +619,7 @@ Object {
           "id": 88775,
           "merchant": undefined,
           "min_rating": 250,
+          "multipleRecipeCount": 1,
           "output": 1,
           "output_range": undefined,
           "prerequisites": Array [
@@ -623,6 +642,7 @@ Object {
       "id": 88773,
       "merchant": undefined,
       "min_rating": 400,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": undefined,
       "prerequisites": Array [
@@ -645,6 +665,7 @@ Object {
   "id": 88772,
   "merchant": undefined,
   "min_rating": 400,
+  "multipleRecipeCount": 1,
   "output": 1,
   "output_range": undefined,
   "prerequisites": Array [
@@ -683,6 +704,7 @@ Object {
   "id": 88771,
   "merchant": undefined,
   "min_rating": 400,
+  "multipleRecipeCount": 1,
   "output": 1,
   "output_range": undefined,
   "prerequisites": Array [
@@ -724,6 +746,7 @@ Object {
       "id": 19742,
       "merchant": undefined,
       "min_rating": 150,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": undefined,
       "prerequisites": Array [
@@ -755,6 +778,7 @@ Object {
   "id": 19814,
   "merchant": undefined,
   "min_rating": 175,
+  "multipleRecipeCount": 1,
   "output": 1,
   "output_range": undefined,
   "prerequisites": Array [
@@ -791,6 +815,7 @@ Object {
       "id": 99994,
       "merchant": undefined,
       "min_rating": 400,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": undefined,
       "prerequisites": Array [
@@ -824,6 +849,7 @@ Object {
           "id": 99994,
           "merchant": undefined,
           "min_rating": 400,
+          "multipleRecipeCount": 1,
           "output": 1,
           "output_range": undefined,
           "prerequisites": Array [
@@ -846,6 +872,7 @@ Object {
       "id": 99991,
       "merchant": undefined,
       "min_rating": 400,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": undefined,
       "prerequisites": Array [
@@ -879,6 +906,7 @@ Object {
           "id": 99994,
           "merchant": undefined,
           "min_rating": 400,
+          "multipleRecipeCount": 1,
           "output": 1,
           "output_range": undefined,
           "prerequisites": Array [
@@ -901,6 +929,7 @@ Object {
       "id": 99992,
       "merchant": undefined,
       "min_rating": 400,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": undefined,
       "prerequisites": Array [
@@ -934,6 +963,7 @@ Object {
           "id": 99994,
           "merchant": undefined,
           "min_rating": 400,
+          "multipleRecipeCount": 1,
           "output": 1,
           "output_range": undefined,
           "prerequisites": Array [
@@ -956,6 +986,7 @@ Object {
       "id": 99993,
       "merchant": undefined,
       "min_rating": 400,
+      "multipleRecipeCount": 1,
       "output": 1,
       "output_range": undefined,
       "prerequisites": Array [
@@ -978,6 +1009,7 @@ Object {
   "id": 99990,
   "merchant": undefined,
   "min_rating": 400,
+  "multipleRecipeCount": 1,
   "output": 1,
   "output_range": undefined,
   "prerequisites": Array [

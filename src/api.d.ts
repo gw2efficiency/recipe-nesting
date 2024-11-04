@@ -18,3 +18,7 @@ export interface API_Recipes_Entry {
   id: number
   chat_link: string
 }
+
+export interface API_Recipes_Entry_Next extends API_Recipes_Entry {
+  multipleRecipeCount: number
+}

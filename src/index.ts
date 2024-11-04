@@ -1,5 +1,5 @@
 import { omit, compact, toMap } from '@devoxa/flocky'
-import { API_Recipes_Entry } from './api'
+import { API_Recipes_Entry_Next } from './api'
 
 export type BasicItemComponent = { id: number; type: 'Item'; quantity: number }
 export type BasicCurrencyComponent = { id: number; type: 'Currency'; quantity: number }
@@ -22,6 +22,7 @@ interface TransformedRecipe {
   achievement_id?: number
   merchant?: { name: string; locations: Array<string> }
   prerequisites: Prerequisites
+  multipleRecipeCount: number
 }
 
 interface TransformedRecipeInternal extends TransformedRecipe {
@@ -35,7 +36,7 @@ interface TransformedRecipeInternal extends TransformedRecipe {
 }
 
 export function nestRecipes(
-  apiRecipes: Array<API_Recipes_Entry>,
+  apiRecipes: Array<API_Recipes_Entry_Next>,
   decorationMap: Record<string, number> = {}
 ): Array<NestedRecipe> {
   const recipes = apiRecipes.map(transformRecipe)
@@ -59,7 +60,7 @@ export function nestRecipes(
     .filter((recipe) => recipe.components) as Array<NestedRecipe>
 }
 
-function transformRecipe(recipe: API_Recipes_Entry): TransformedRecipeInternal {
+function transformRecipe(recipe: API_Recipes_Entry_Next): TransformedRecipeInternal {
   const components = recipe.ingredients.map((ingredient) => ({
     id: ingredient.id,
     type: ingredient.type,
@@ -80,6 +81,7 @@ function transformRecipe(recipe: API_Recipes_Entry): TransformedRecipeInternal {
     output_range: recipe.output_item_count_range,
     achievement_id: recipe.achievement_id,
     merchant: recipe.merchant,
+    multipleRecipeCount: recipe.multipleRecipeCount,
   }
 }
 
