@@ -105,6 +105,7 @@ function nestRecipe(
     const isGuildUpgrade = component.type === 'GuildUpgrade'
     const id = isGuildUpgrade ? recipeUpgradesMap[component.id] || component.id : component.id
     const componentRecipe = recipesMap[id]
+    const condensedLeyLineEssenceIds = [91224, 91137, 91222, 91171]
 
     // Just give back the component for currencies
     if (component.type === 'Currency') {
@@ -130,6 +131,11 @@ function nestRecipe(
       return isGuildUpgrade
         ? { id, type: 'Item' as const, quantity: component.quantity }
         : component
+    }
+
+    // These items should not have components if they are components of each other
+    if (condensedLeyLineEssenceIds.includes(recipe.id) && condensedLeyLineEssenceIds.includes(id)) {
+      return component
     }
 
     // The component recipe is not nested yet, so we nest it now!
