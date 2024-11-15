@@ -401,4 +401,144 @@ describe('recipe-nesting', () => {
   it('ignores recipes with only guild upgrades', () => {
     expect(output.find((x) => x.id === 4567)).toEqual(undefined)
   })
+
+  it('excludes components for Condensed Ley-Line Essence items if they are components of each other', () => {
+    const input: Array<API_Recipes_Entry_Next> = [
+      {
+        type: 'Recipe',
+        output_item_id: 91137,
+        output_item_count: 1,
+        min_rating: 400,
+        disciplines: ['Mystic Forge'],
+        flags: [],
+        ingredients: [
+          {
+            id: 24272,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 24464,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 24326,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 91224,
+            type: 'Item',
+            count: 2,
+          },
+        ],
+        id: 1,
+        chat_link: '[&CQIAAAA=]',
+        multipleRecipeCount: 3,
+      },
+      {
+        type: 'Recipe',
+        output_item_id: 91171,
+        output_item_count: 1,
+        min_rating: 400,
+        disciplines: ['Mystic Forge'],
+        flags: [],
+        ingredients: [
+          {
+            id: 24272,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 24534,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 24326,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 91224,
+            type: 'Item',
+            count: 2,
+          },
+        ],
+        id: 2,
+        chat_link: '[&CQIAAAA=]',
+        multipleRecipeCount: 3,
+      },
+      {
+        type: 'Recipe',
+        output_item_id: 91222,
+        output_item_count: 1,
+        min_rating: 400,
+        disciplines: ['Mystic Forge'],
+        flags: [],
+        ingredients: [
+          {
+            id: 24272,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 24464,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 24326,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 91224,
+            type: 'Item',
+            count: 2,
+          },
+        ],
+        id: 3,
+        chat_link: '[&CQIAAAA=]',
+        multipleRecipeCount: 3,
+      },
+      {
+        type: 'Recipe',
+        output_item_id: 91224,
+        output_item_count: 1,
+        min_rating: 400,
+        disciplines: ['Mystic Forge'],
+        flags: [],
+        ingredients: [
+          {
+            id: 24272,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 24465,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 91137,
+            type: 'Item',
+            count: 1,
+          },
+          {
+            id: 91224,
+            type: 'Item',
+            count: 2,
+          },
+        ],
+        id: 4,
+        chat_link: '[&CQIAAAA=]',
+        multipleRecipeCount: 3,
+      },
+    ]
+
+    const output = nestRecipes(input)
+    expect(output).toMatchSnapshot()
+  })
 })
