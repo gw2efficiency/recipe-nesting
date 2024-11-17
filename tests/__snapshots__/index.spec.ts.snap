@@ -719,6 +719,183 @@ Object {
 }
 `;
 
+exports[`recipe-nesting excludes components for Condensed Ley-Line Essence items if they are components of each other 1`] = `
+Array [
+  Object {
+    "achievement_id": undefined,
+    "components": Array [
+      Object {
+        "id": 24272,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 24464,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 24326,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 91224,
+        "quantity": 2,
+        "type": "Item",
+      },
+    ],
+    "disciplines": Array [
+      "Mystic Forge",
+    ],
+    "id": 91137,
+    "merchant": undefined,
+    "min_rating": 400,
+    "multipleRecipeCount": 3,
+    "output": 1,
+    "output_range": undefined,
+    "prerequisites": Array [
+      Object {
+        "id": 1,
+        "type": "Recipe",
+      },
+    ],
+    "quantity": 1,
+    "type": "Recipe",
+    "upgrade_id": undefined,
+  },
+  Object {
+    "achievement_id": undefined,
+    "components": Array [
+      Object {
+        "id": 24272,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 24534,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 24326,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 91224,
+        "quantity": 2,
+        "type": "Item",
+      },
+    ],
+    "disciplines": Array [
+      "Mystic Forge",
+    ],
+    "id": 91171,
+    "merchant": undefined,
+    "min_rating": 400,
+    "multipleRecipeCount": 3,
+    "output": 1,
+    "output_range": undefined,
+    "prerequisites": Array [
+      Object {
+        "id": 2,
+        "type": "Recipe",
+      },
+    ],
+    "quantity": 1,
+    "type": "Recipe",
+    "upgrade_id": undefined,
+  },
+  Object {
+    "achievement_id": undefined,
+    "components": Array [
+      Object {
+        "id": 24272,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 24464,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 24326,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 91224,
+        "quantity": 2,
+        "type": "Item",
+      },
+    ],
+    "disciplines": Array [
+      "Mystic Forge",
+    ],
+    "id": 91222,
+    "merchant": undefined,
+    "min_rating": 400,
+    "multipleRecipeCount": 3,
+    "output": 1,
+    "output_range": undefined,
+    "prerequisites": Array [
+      Object {
+        "id": 3,
+        "type": "Recipe",
+      },
+    ],
+    "quantity": 1,
+    "type": "Recipe",
+    "upgrade_id": undefined,
+  },
+  Object {
+    "achievement_id": undefined,
+    "components": Array [
+      Object {
+        "id": 24272,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 24465,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 91137,
+        "quantity": 1,
+        "type": "Item",
+      },
+      Object {
+        "id": 91224,
+        "quantity": 2,
+        "type": "Item",
+      },
+    ],
+    "disciplines": Array [
+      "Mystic Forge",
+    ],
+    "id": 91224,
+    "merchant": undefined,
+    "min_rating": 400,
+    "multipleRecipeCount": 3,
+    "output": 1,
+    "output_range": undefined,
+    "prerequisites": Array [
+      Object {
+        "id": 4,
+        "type": "Recipe",
+      },
+    ],
+    "quantity": 1,
+    "type": "Recipe",
+    "upgrade_id": undefined,
+  },
+]
+`;
+
 exports[`recipe-nesting orders the components correctly 1`] = `
 Object {
   "achievement_id": undefined,
