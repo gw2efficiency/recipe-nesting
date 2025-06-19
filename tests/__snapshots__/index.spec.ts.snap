@@ -10,6 +10,7 @@ Object {
       "type": "Item",
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Artificer",
     "Weaponsmith",
@@ -31,6 +32,7 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;
 
@@ -44,6 +46,7 @@ Object {
       "type": "Item",
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Artificer",
     "Weaponsmith",
@@ -65,6 +68,7 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;
 
@@ -81,6 +85,7 @@ Object {
           "type": "Item",
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Artificer",
         "Weaponsmith",
@@ -102,6 +107,7 @@ Object {
       "quantity": 2,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
     Object {
       "achievement_id": undefined,
@@ -112,6 +118,7 @@ Object {
           "type": "Item",
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Armorsmith",
         "Artificer",
@@ -135,6 +142,7 @@ Object {
       "quantity": 3,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
     Object {
       "id": 1,
@@ -147,6 +155,7 @@ Object {
       "type": "Currency",
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Artificer",
     "Weaponsmith",
@@ -168,6 +177,7 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;
 
@@ -184,6 +194,7 @@ Object {
           "type": "Item",
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Artificer",
         "Weaponsmith",
@@ -205,6 +216,7 @@ Object {
       "quantity": 2,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
     Object {
       "achievement_id": undefined,
@@ -220,6 +232,7 @@ Object {
           "type": "Item",
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Armorsmith",
         "Artificer",
@@ -242,8 +255,10 @@ Object {
       "quantity": 3,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Artificer",
     "Weaponsmith",
@@ -264,6 +279,7 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;
 
@@ -282,6 +298,7 @@ Object {
       "type": "Item",
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Armorsmith",
     "Artificer",
@@ -304,6 +321,7 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;
 
@@ -326,6 +344,7 @@ Array [
             "type": "Item",
           },
         ],
+        "daily_purchase_cap": 0,
         "disciplines": Array [
           "Scribe",
         ],
@@ -344,8 +363,10 @@ Array [
         "quantity": 2,
         "type": "Recipe",
         "upgrade_id": undefined,
+        "weekly_purchase_cap": 0,
       },
     ],
+    "daily_purchase_cap": 0,
     "disciplines": Array [
       "Scribe",
     ],
@@ -364,6 +385,7 @@ Array [
     "quantity": 1,
     "type": "Recipe",
     "upgrade_id": undefined,
+    "weekly_purchase_cap": 0,
   },
   Object {
     "achievement_id": undefined,
@@ -379,6 +401,7 @@ Array [
         "type": "Item",
       },
     ],
+    "daily_purchase_cap": 0,
     "disciplines": Array [
       "Scribe",
     ],
@@ -397,6 +420,7 @@ Array [
     "quantity": 1,
     "type": "Recipe",
     "upgrade_id": undefined,
+    "weekly_purchase_cap": 0,
   },
 ]
 `;
@@ -427,6 +451,7 @@ Object {
               "type": "Item",
             },
           ],
+          "daily_purchase_cap": 0,
           "disciplines": Array [
             "Armorsmith",
             "Artificer",
@@ -449,8 +474,10 @@ Object {
           "quantity": 3,
           "type": "Recipe",
           "upgrade_id": undefined,
+          "weekly_purchase_cap": 0,
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Scribe",
       ],
@@ -469,8 +496,10 @@ Object {
       "quantity": 7,
       "type": "Recipe",
       "upgrade_id": 696,
+      "weekly_purchase_cap": 0,
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Leatherworker",
     "Armorsmith",
@@ -491,6 +520,7 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;
 
@@ -523,6 +553,7 @@ Object {
                   "type": "Item",
                 },
               ],
+              "daily_purchase_cap": 0,
               "disciplines": Array [
                 "Artificer",
                 "Weaponsmith",
@@ -544,8 +575,10 @@ Object {
               "quantity": 2,
               "type": "Recipe",
               "upgrade_id": undefined,
+              "weekly_purchase_cap": 0,
             },
           ],
+          "daily_purchase_cap": 0,
           "disciplines": Array [
             "Artificer",
             "Weaponsmith",
@@ -567,6 +600,7 @@ Object {
           "quantity": 2,
           "type": "Recipe",
           "upgrade_id": undefined,
+          "weekly_purchase_cap": 0,
         },
         Object {
           "achievement_id": undefined,
@@ -585,6 +619,7 @@ Object {
                   "type": "Item",
                 },
               ],
+              "daily_purchase_cap": 0,
               "disciplines": Array [
                 "Artificer",
                 "Weaponsmith",
@@ -606,6 +641,7 @@ Object {
               "quantity": 2,
               "type": "Recipe",
               "upgrade_id": undefined,
+              "weekly_purchase_cap": 0,
             },
             Object {
               "id": 88775,
@@ -613,6 +649,7 @@ Object {
               "type": "Item",
             },
           ],
+          "daily_purchase_cap": 0,
           "disciplines": Array [
             "Scribe",
           ],
@@ -631,8 +668,10 @@ Object {
           "quantity": 1,
           "type": "Recipe",
           "upgrade_id": 9001,
+          "weekly_purchase_cap": 0,
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Artificer",
         "Weaponsmith",
@@ -654,8 +693,10 @@ Object {
       "quantity": 2,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Artificer",
     "Weaponsmith",
@@ -677,6 +718,7 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;
 
@@ -695,6 +737,7 @@ Object {
       "type": "Item",
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Artificer",
     "Weaponsmith",
@@ -716,6 +759,7 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;
 
@@ -745,6 +789,7 @@ Array [
         "type": "Item",
       },
     ],
+    "daily_purchase_cap": 0,
     "disciplines": Array [
       "Mystic Forge",
     ],
@@ -763,6 +808,7 @@ Array [
     "quantity": 1,
     "type": "Recipe",
     "upgrade_id": undefined,
+    "weekly_purchase_cap": 0,
   },
   Object {
     "achievement_id": undefined,
@@ -788,6 +834,7 @@ Array [
         "type": "Item",
       },
     ],
+    "daily_purchase_cap": 0,
     "disciplines": Array [
       "Mystic Forge",
     ],
@@ -806,6 +853,7 @@ Array [
     "quantity": 1,
     "type": "Recipe",
     "upgrade_id": undefined,
+    "weekly_purchase_cap": 0,
   },
   Object {
     "achievement_id": undefined,
@@ -831,6 +879,7 @@ Array [
         "type": "Item",
       },
     ],
+    "daily_purchase_cap": 0,
     "disciplines": Array [
       "Mystic Forge",
     ],
@@ -849,6 +898,7 @@ Array [
     "quantity": 1,
     "type": "Recipe",
     "upgrade_id": undefined,
+    "weekly_purchase_cap": 0,
   },
   Object {
     "achievement_id": undefined,
@@ -874,6 +924,7 @@ Array [
         "type": "Item",
       },
     ],
+    "daily_purchase_cap": 0,
     "disciplines": Array [
       "Mystic Forge",
     ],
@@ -892,6 +943,7 @@ Array [
     "quantity": 1,
     "type": "Recipe",
     "upgrade_id": undefined,
+    "weekly_purchase_cap": 0,
   },
 ]
 `;
@@ -914,6 +966,7 @@ Object {
           "type": "Item",
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Leatherworker",
         "Armorsmith",
@@ -935,6 +988,7 @@ Object {
       "quantity": 1,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
     Object {
       "id": 24285,
@@ -947,6 +1001,7 @@ Object {
       "type": "Item",
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Leatherworker",
     "Armorsmith",
@@ -967,6 +1022,7 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;
 
@@ -983,6 +1039,7 @@ Object {
           "type": "Item",
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Artificer",
         "Weaponsmith",
@@ -1004,6 +1061,7 @@ Object {
       "quantity": 1,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
     Object {
       "achievement_id": undefined,
@@ -1017,6 +1075,7 @@ Object {
               "type": "Item",
             },
           ],
+          "daily_purchase_cap": 0,
           "disciplines": Array [
             "Artificer",
             "Weaponsmith",
@@ -1038,8 +1097,10 @@ Object {
           "quantity": 2,
           "type": "Recipe",
           "upgrade_id": undefined,
+          "weekly_purchase_cap": 0,
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Artificer",
         "Weaponsmith",
@@ -1061,6 +1122,7 @@ Object {
       "quantity": 2,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
     Object {
       "achievement_id": undefined,
@@ -1074,6 +1136,7 @@ Object {
               "type": "Item",
             },
           ],
+          "daily_purchase_cap": 0,
           "disciplines": Array [
             "Artificer",
             "Weaponsmith",
@@ -1095,8 +1158,10 @@ Object {
           "quantity": 2,
           "type": "Recipe",
           "upgrade_id": undefined,
+          "weekly_purchase_cap": 0,
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Artificer",
         "Weaponsmith",
@@ -1118,6 +1183,7 @@ Object {
       "quantity": 2,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
     Object {
       "achievement_id": undefined,
@@ -1131,6 +1197,7 @@ Object {
               "type": "Item",
             },
           ],
+          "daily_purchase_cap": 0,
           "disciplines": Array [
             "Artificer",
             "Weaponsmith",
@@ -1152,8 +1219,10 @@ Object {
           "quantity": 2,
           "type": "Recipe",
           "upgrade_id": undefined,
+          "weekly_purchase_cap": 0,
         },
       ],
+      "daily_purchase_cap": 0,
       "disciplines": Array [
         "Artificer",
         "Weaponsmith",
@@ -1175,8 +1244,10 @@ Object {
       "quantity": 2,
       "type": "Recipe",
       "upgrade_id": undefined,
+      "weekly_purchase_cap": 0,
     },
   ],
+  "daily_purchase_cap": 0,
   "disciplines": Array [
     "Artificer",
     "Weaponsmith",
@@ -1198,5 +1269,6 @@ Object {
   "quantity": 1,
   "type": "Recipe",
   "upgrade_id": undefined,
+  "weekly_purchase_cap": 0,
 }
 `;

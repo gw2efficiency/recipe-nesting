@@ -21,4 +21,6 @@ export interface API_Recipes_Entry {
 
 export interface API_Recipes_Entry_Next extends API_Recipes_Entry {
   multipleRecipeCount: number
+  daily_purchase_cap?: number
+  weekly_purchase_cap?: number
 }
