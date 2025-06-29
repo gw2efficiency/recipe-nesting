@@ -23,6 +23,8 @@ interface TransformedRecipe {
   merchant?: { name: string; locations: Array<string> }
   prerequisites: Prerequisites
   multipleRecipeCount: number
+  daily_purchase_cap?: number
+  weekly_purchase_cap?: number
 }
 
 interface TransformedRecipeInternal extends TransformedRecipe {
@@ -82,6 +84,8 @@ function transformRecipe(recipe: API_Recipes_Entry_Next): TransformedRecipeInter
     achievement_id: recipe.achievement_id,
     merchant: recipe.merchant,
     multipleRecipeCount: recipe.multipleRecipeCount,
+    daily_purchase_cap: recipe.daily_purchase_cap ? recipe.daily_purchase_cap : 0,
+    weekly_purchase_cap: recipe.weekly_purchase_cap ? recipe.weekly_purchase_cap : 0,
   }
 }
 

@@ -16,6 +16,8 @@ describe('recipe-nesting', () => {
       output_item_count_range: '1-10',
       achievement_id: 12,
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -28,6 +30,8 @@ describe('recipe-nesting', () => {
       id: 2,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -40,6 +44,8 @@ describe('recipe-nesting', () => {
       id: 21,
       chat_link: '[&CRUAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -57,6 +63,8 @@ describe('recipe-nesting', () => {
       id: 39,
       chat_link: '[&CScAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -69,6 +77,8 @@ describe('recipe-nesting', () => {
       id: 3,
       chat_link: '[&CQMAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -84,6 +94,8 @@ describe('recipe-nesting', () => {
       id: 16,
       chat_link: '[&CRAAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -99,6 +111,8 @@ describe('recipe-nesting', () => {
       id: 30,
       chat_link: '[&CR4AAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -111,6 +125,8 @@ describe('recipe-nesting', () => {
       id: 7,
       chat_link: '[&CQcAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Insignia',
@@ -128,6 +144,8 @@ describe('recipe-nesting', () => {
       id: 69,
       chat_link: '[&CUUAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Fake',
@@ -144,6 +162,8 @@ describe('recipe-nesting', () => {
       id: 69,
       chat_link: '[&CUUAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'GuildDecoration',
@@ -157,6 +177,8 @@ describe('recipe-nesting', () => {
       id: 11756,
       chat_link: '[&CewtAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Fake too',
@@ -171,6 +193,8 @@ describe('recipe-nesting', () => {
       id: 69,
       chat_link: '[&CUUAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -186,6 +210,8 @@ describe('recipe-nesting', () => {
       id: 2,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -201,6 +227,8 @@ describe('recipe-nesting', () => {
       id: 2,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -216,6 +244,8 @@ describe('recipe-nesting', () => {
       id: 2,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -228,6 +258,8 @@ describe('recipe-nesting', () => {
       id: 2,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'GuildDecoration',
@@ -244,6 +276,8 @@ describe('recipe-nesting', () => {
       id: 900011,
       chat_link: '[&CewtAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -261,6 +295,8 @@ describe('recipe-nesting', () => {
       id: 1293083123,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -273,6 +309,8 @@ describe('recipe-nesting', () => {
       id: 987654645,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -285,6 +323,8 @@ describe('recipe-nesting', () => {
       id: 767567,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -297,6 +337,8 @@ describe('recipe-nesting', () => {
       id: 2344356,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'Refinement',
@@ -309,6 +351,8 @@ describe('recipe-nesting', () => {
       id: 12421412312,
       chat_link: '[&CQIAAAA=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
     {
       type: 'CraftingMaterial',
@@ -320,6 +364,8 @@ describe('recipe-nesting', () => {
       id: -1626,
       chat_link: '[&FAAAKE=]',
       multipleRecipeCount: 1,
+      daily_purchase_cap: 0,
+      weekly_purchase_cap: 0,
     },
   ]
 
@@ -363,6 +409,8 @@ describe('recipe-nesting', () => {
         id: 2,
         chat_link: '[&CQIAAAA=]',
         multipleRecipeCount: 1,
+        daily_purchase_cap: 0,
+        weekly_purchase_cap: 0,
       },
       {
         type: 'Refinement',
@@ -378,6 +426,8 @@ describe('recipe-nesting', () => {
         id: 1,
         chat_link: '[&CQIAAAA=]',
         multipleRecipeCount: 1,
+        daily_purchase_cap: 0,
+        weekly_purchase_cap: 0,
       },
     ]
     const decorations = { 42: 1337 }
@@ -436,6 +486,8 @@ describe('recipe-nesting', () => {
         id: 1,
         chat_link: '[&CQIAAAA=]',
         multipleRecipeCount: 3,
+        daily_purchase_cap: 0,
+        weekly_purchase_cap: 0,
       },
       {
         type: 'Recipe',
@@ -469,6 +521,8 @@ describe('recipe-nesting', () => {
         id: 2,
         chat_link: '[&CQIAAAA=]',
         multipleRecipeCount: 3,
+        daily_purchase_cap: 0,
+        weekly_purchase_cap: 0,
       },
       {
         type: 'Recipe',
@@ -502,6 +556,8 @@ describe('recipe-nesting', () => {
         id: 3,
         chat_link: '[&CQIAAAA=]',
         multipleRecipeCount: 3,
+        daily_purchase_cap: 0,
+        weekly_purchase_cap: 0,
       },
       {
         type: 'Recipe',
@@ -535,6 +591,8 @@ describe('recipe-nesting', () => {
         id: 4,
         chat_link: '[&CQIAAAA=]',
         multipleRecipeCount: 3,
+        daily_purchase_cap: 0,
+        weekly_purchase_cap: 0,
       },
     ]
 
